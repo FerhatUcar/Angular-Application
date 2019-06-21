@@ -1,0 +1,82 @@
+// media
+@function em($px, $context: 16px) {
+  @return ($px / $context) * 1em;
+}
+
+
+// Breakpoints
+$breakpoint-mobile                    : 320px;
+$breakpoint-phone-plus                : 480px;
+$breakpoint-tablet-portrait           : 635px;
+$breakpoint-tablet-landscape          : 1024px;
+$breakpoint-laptop                    : 1240px;
+$breakpoint-desktop                   : 1600px;
+
+$container-max-width                  : 960px;
+$cards-full-width                     : 920px;
+$hide-shopping-cart-width             : 650px;
+
+
+
+// Device named breakpoints, used for the mixins.
+$phone-start                          : $breakpoint-mobile;
+$phone-end                            : $breakpoint-phone-plus - 0.5;
+$phone-plus-start                     : $breakpoint-phone-plus;
+$phone-plus-end                       : $breakpoint-tablet-portrait - 0.5;
+$tablet-portrait-start                : $breakpoint-tablet-portrait;
+$tablet-portrait-end                  : $breakpoint-tablet-landscape - 0.5;
+$tablet-landscape-start               : $breakpoint-tablet-landscape;
+$tablet-landscape-end                 : $breakpoint-laptop - 0.5;
+$laptop-start                         : $breakpoint-laptop;
+$laptop-end                           : $breakpoint-desktop - 0.5;
+$desktop-start                        : $breakpoint-desktop;
+
+
+
+
+// Media query: phone and smaller
+@mixin screen-phone {
+  @media only screen and (max-width: em($phone-plus-end )) {
+    @content;
+  }
+}
+
+// Hide shopping cart
+@mixin screen-hide-shopping-cart {
+  @media only screen and (max-width: $hide-shopping-cart-width) {
+    @content;
+  }
+}
+
+// Media query: tablet
+@mixin screen-tablet {
+  @media only screen and (min-width: em($tablet-portrait-start)) and (max-width: em($tablet-landscape-end)) {
+    @content;
+  }
+}
+
+// Media query: desktop
+@mixin screen-desktop {
+  @media only screen and (min-width: em($laptop-start)) {
+    @content;
+  }
+}
+
+// Media query: container min desktop
+@mixin screen-min-container {
+  @media only screen and (min-width: em($container-max-width)) {
+    @content;
+  }
+}
+
+
+// Media query: container max desktop
+@mixin screen-cards-full {
+  @media only screen and (max-width: em($cards-full-width)) {
+    @content;
+  }
+}
+
+
+
+

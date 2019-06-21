@@ -1,0 +1,11 @@
+@mixin flex($flex, $items, $content) {
+  display: $flex;
+  align-items: $items;
+  align-content: $content;
+}
+
+@mixin truncate($space, $overflow, $text) {
+  white-space: $space;
+  overflow: $overflow;
+  text-overflow: $text;
+}

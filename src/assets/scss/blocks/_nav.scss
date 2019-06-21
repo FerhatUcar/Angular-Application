@@ -1,0 +1,55 @@
+@import "../../../../node_modules/bourbon/core/bourbon";
+@import "../partials/vars";
+
+.push {
+  &__right {
+    transform: translateX(200px);
+  }
+}
+
+.navbar {
+  transition: all 0.2s linear;
+  padding: $gutter-sm;
+  background: $black-color-opacity-075;
+
+  &__side {
+    @include size(0, 100%);
+    @include position(fixed, 0 null null 0);
+    transition: all 0.2s linear;
+    z-index: 1;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 70px;
+
+    &--active {
+      width: 200px;
+    }
+  }
+
+  &__link {
+    @include padding(8px 8px 8px 32px !important);
+    text-decoration: none;
+    color: white !important;
+    width: 100%;
+    display: block;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: white;
+      color: black !important;
+      text-decoration: none;
+
+      .navbar__text {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.hamburger {
+  transition: all 0.1s ease !important;
+
+  span.bar {
+    background-color: white !important;
+  }
+}

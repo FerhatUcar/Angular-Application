@@ -1,0 +1,94 @@
+[
+    {
+        "name": "Aardbei",
+        "category": "fruit",
+        "price": 0.90,
+        "quantity": 0,
+        "image_url": "assets/img/webshop/fruit/aardbei.jpg"
+    },
+    {
+        "name": "Appel",
+        "category": "fruit",
+        "price": 0.30,
+        "quantity": 0,
+        "image_url": "assets/img/webshop/fruit/appel.jpg"
+    },
+    {
+        "name": "Banaan",
+        "category": "fruit",
+        "price": 0.50,
+        "quantity": 0,
+        "image_url": "assets/img/webshop/fruit/banaan.jpg"
+    },
+    {
+        "name": "Kers",
+        "category": "fruit",
+        "price": 0.15,
+        "quantity": 0,
+        "image_url": "assets/img/webshop/fruit/kers.jpg"
+    },
+    {
+        "name": "Peer",
+        "category": "fruit",
+        "price": 0.40,
+        "quantity": 0,
+        "image_url": "assets/img/webshop/fruit/peer.jpg"
+    },
+    {
+        "name": "Sinaasappel",
+        "category": "fruit",
+        "price": 0.30,
+        "quantity": 0,
+        "image_url": "assets/img/webshop/fruit/sinaasappel.jpg"
+    },
+
+    {
+        "name": "Kip",
+        "category": "vlees",
+        "price": 2.00,
+        "quantity": 0,
+        "image_url": "assets/img/webshop/vlees/kip.jpg"
+    },
+    {
+        "name": "Lam",
+        "category": "vlees",
+        "price": 3.00,
+        "quantity": 0,
+        "image_url": "assets/img/webshop/vlees/schaap.jpg"
+    },
+    {
+        "name": "Rund",
+        "category": "vlees",
+        "price": 4.00,
+        "quantity": 0,
+        "image_url": "assets/img/webshop/vlees/koe.jpg"
+    },
+    {
+        "name": "Varkensvlees",
+        "category": "vlees",
+        "price": 2.30,
+        "quantity": 0,
+        "image_url": "assets/img/webshop/vlees/varken.jpg"
+    },
+    {
+        "name": "Garnaal",
+        "category": "vis",
+        "price": 3.10,
+        "quantity": 0,
+        "image_url": "assets/img/webshop/vis/garnaal.jpg"
+    },
+    {
+        "name": "Krab",
+        "category": "vis",
+        "price": 2.50,
+        "quantity": 0,
+        "image_url": "assets/img/webshop/vis/krab.jpg"
+    },
+    {
+        "name": "Vis",
+        "category": "vis",
+        "price": 1.40,
+        "quantity": 0,
+        "image_url": "assets/img/webshop/vis/vis.jpg"
+    }
+]

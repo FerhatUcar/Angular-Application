@@ -1,18 +1,60 @@
+// main imports
+import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { routing } from './app.routing';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+// components
+import { AppComponent }  from './app.component';
+import { RecordsComponent, InputErrorComponent }  from './components/records/records';
+import { AboutComponent }  from './components/about/about.component';
+import { WebshopComponent }  from './components/webshop/webshop';
+import { HomeComponent }  from './components/home';
+import { ProductComponent } from "./components/webshop/products/products";
+import { NavigationComponent } from './components/navigation/navigation';
+import { ProductFilter } from './components/webshop/product-filter/product-filter';
+import { ShoppingCart } from './components/webshop/shopping-cart/shopping-cart';
+import { ProductCard } from './components/webshop/product-card/product-card';
+
+// materials
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MaterialModule } from './material.module';
+
+// services
+import { ProductsService } from "./components/webshop/products/products.service";
+import { ShoppingCartService } from "./components/webshop/shopping-cart/shopping-cart.service";
+
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    HttpClientModule,
+    routing,
+    BrowserAnimationsModule,
+    MaterialModule,
+    MatSidenavModule,
+    ReactiveFormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    RecordsComponent,
+    HomeComponent,
+    AboutComponent,
+    ProductComponent,
+    WebshopComponent,
+    NavigationComponent,
+    InputErrorComponent,
+    ProductFilter,
+    ProductCard,
+    ShoppingCart
+  ],
+  bootstrap: [AppComponent],
+  providers: [
+    ProductsService,
+    ShoppingCartService
+  ],
 })
 export class AppModule { }

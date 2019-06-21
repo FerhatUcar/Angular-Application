@@ -1,0 +1,278 @@
+@import url(https://fonts.googleapis.com/css?family=Squada+One);
+.push__right {
+  transform: translateX(200px); }
+
+.navbar {
+  transition: all 0.2s linear;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.75); }
+  .navbar__side {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.2s linear;
+    z-index: 1;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 70px; }
+    .navbar__side--active {
+      width: 200px; }
+  .navbar__link {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    color: white !important;
+    width: 100%;
+    display: block;
+    transition: 0.3s; }
+    .navbar__link:hover {
+      background-color: white;
+      color: black !important;
+      text-decoration: none; }
+      .navbar__link:hover .navbar__text {
+        font-size: 16px; }
+
+.hamburger {
+  transition: all 0.1s ease !important; }
+  .hamburger span.bar {
+    background-color: white !important; }
+
+.records {
+  display: flex; }
+  @media only screen and (max-width: 39.65625em) {
+    .records {
+      flex-wrap: wrap; } }
+  .records__list {
+    padding: 0;
+    margin: 0; }
+  .records__listitem {
+    display: block;
+    background: aliceblue;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    background: rgba(240, 248, 255, 0.75); }
+  .records__form {
+    background: rgba(240, 248, 255, 0.75);
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    padding: 20px;
+    margin-bottom: 20px; }
+    .records__form .mat-form-field {
+      width: 100%; }
+  .records__delete {
+    right: -35px;
+    top: -35px;
+    float: right; }
+  .records__input {
+    width: 45%;
+    margin: 0 1rem 0 0; }
+    @media only screen and (max-width: 39.65625em) {
+      .records__input {
+        width: 100%;
+        margin: 0; } }
+  .records__output {
+    width: 45%; }
+    @media only screen and (max-width: 39.65625em) {
+      .records__output {
+        width: 100%; } }
+
+.webshop {
+  background: rgba(0, 0, 0, 0.75);
+  position: relative;
+  margin: 1rem 0 2rem 0;
+  display: inline-flex;
+  border-radius: 1rem;
+  min-height: 600px;
+  width: 100%;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
+  .webshop h3 {
+    padding: 0.5rem;
+    border-bottom: solid 1px;
+    margin-bottom: 0; }
+  .webshop products {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 1rem;
+    max-width: 745px;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url("../img/webshop/white-bg.jpg") no-repeat;
+    background-size: cover; }
+    @media only screen and (max-width: 650px) {
+      .webshop products {
+        border-bottom-right-radius: 1rem;
+        border-top-right-radius: 1rem; } }
+  .webshop__close {
+    height: 1.25rem;
+    width: 1.25rem;
+    background: url("../img/webshop/close.svg") no-repeat;
+    background-size: contain;
+    display: block;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    border: 0; }
+  .webshop__cartIcon {
+    display: none !important; }
+    @media only screen and (max-width: 650px) {
+      .webshop__cartIcon {
+        display: block !important;
+        margin: 0 auto !important; } }
+  .webshop__cart {
+    border-top-right-radius: 1rem;
+    min-height: 300px;
+    min-width: 275px;
+    flex: 30%; }
+    @media only screen and (max-width: 650px) {
+      .webshop__cart {
+        display: none; } }
+  .webshop__total {
+    color: white;
+    border-top: solid 1px white;
+    padding: 1rem 0.5rem 0.5rem 0.5rem; }
+    .webshop__total--shipment {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem; }
+    .webshop__total--price {
+      display: flex;
+      justify-content: space-between; }
+  .webshop__clear {
+    border-top: solid 1px white;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between; }
+    .webshop__clear button {
+      width: 100%; }
+      .webshop__clear button:first-child {
+        margin-right: 0.5rem; }
+  .webshop__checkout {
+    border-top: solid 1px white;
+    padding: 0.5rem; }
+    .webshop__checkout button {
+      width: 100%; }
+  .webshop__items {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    transition: all .1s ease-in-out;
+    color: white;
+    justify-content: space-between;
+    padding: 0.5rem; }
+    .webshop__items:hover {
+      background-color: rgba(255, 255, 255, 0.3); }
+    .webshop__items--name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex-grow: 1;
+      width: 90px;
+      max-width: 90px;
+      margin-right: 0.5rem; }
+    .webshop__items--quantity {
+      flex-grow: 1; }
+  .webshop__empty {
+    color: white;
+    margin: 1rem 0.5rem; }
+  .webshop__sticky {
+    position: fixed;
+    top: 0;
+    left: 20px; }
+  .webshop__categories {
+    width: 75px;
+    color: white;
+    flex-flow: column;
+    display: flex;
+    height: 100%; }
+  .webshop__button {
+    margin: 0 auto !important;
+    display: block !important; }
+  .webshop__menu {
+    width: 300px;
+    background: #00b8d4; }
+  .webshop__checkout mat-icon {
+    position: relative;
+    bottom: 1px; }
+  .webshop__card {
+    margin: 1rem 0 0 1rem;
+    flex-basis: auto;
+    flex-grow: 1; }
+    .webshop__card:hover img {
+      transition: all 300ms;
+      transform: translateY(-10px); }
+    .webshop__card:last-of-type {
+      margin-bottom: 1rem; }
+    .webshop__card p {
+      color: black; }
+    .webshop__card img {
+      margin: 0 auto;
+      display: block; }
+    .webshop__card mat-card-actions button {
+      width: 100%; }
+
+.is-visible {
+  display: block;
+  width: calc(100% - 77px);
+  position: absolute;
+  background: rgba(0, 0, 0, 0.85);
+  left: 76px; }
+
+html, body {
+  overflow-x: hidden; }
+
+body {
+  font-family: 'Squada One', cursive;
+  color: black;
+  background-size: auto;
+  background: black url("../img/android.jpg") no-repeat;
+  margin: 0;
+  padding: 0; }
+
+.container {
+  transition: all 0.2s linear;
+  max-width: 940px;
+  overflow: hidden;
+  min-height: 100%;
+  margin: 0 1rem; }
+  @media only screen and (min-width: 60em) {
+    .container {
+      margin: 0 auto;
+      padding: 0 1rem;
+      max-width: 1500px; } }
+
+p {
+  color: white;
+  font-size: 1.5rem; }
+
+a {
+  line-height: 1.7; }
+
+h1 {
+  margin-top: 1rem;
+  font-size: 8rem;
+  color: white; }
+  h1 span {
+    color: rgba(0, 0, 0, 0.75);
+    text-decoration: underline;
+    text-decoration-color: white; }
+
+h2 {
+  margin-top: 30px;
+  color: white;
+  font-size: 1.7em;
+  line-height: 1;
+  letter-spacing: 2px;
+  text-transform: uppercase; }
+
+h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 0; }
+
+.block {
+  background: white;
+  float: left;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 5px; }
+
+/*# sourceMappingURL=main.css.map */

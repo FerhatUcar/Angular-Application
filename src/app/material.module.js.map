@@ -1,0 +1,1 @@
+{"version":3,"file":"material.module.js","sourceRoot":"","sources":["material.module.ts"],"names":[],"mappings":";;;;;;;;AAAA,sCAAyC;AACzC,8CAI2B;AAe3B;IAAA;IAA8B,CAAC;IAAlB,cAAc;QAb1B,eAAQ,CAAC;YACR,OAAO,EAAE;gBACL,0BAAe;gBACf,yBAAc;gBACd,wBAAa;aAChB;YACD,OAAO,EAAE;gBACL,0BAAe;gBACf,yBAAc;gBACd,wBAAa;aAChB;SACF,CAAC;OAEW,cAAc,CAAI;IAAD,qBAAC;CAAA,AAA/B,IAA+B;AAAlB,wCAAc"}

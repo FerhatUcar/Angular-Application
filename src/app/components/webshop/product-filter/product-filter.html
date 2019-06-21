@@ -1,0 +1,42 @@
+<div class="webshop__categories">
+  <div class="webshop__buttons" (scroll)="onWindowScroll($event);">
+    <button
+      class="webshop__button"
+      mat-button
+      routerLink="/webshop"
+      routerLinkActive="mat-accent"
+      [queryParams]="{ category: '' }">
+      Alles
+    </button>
+    <button
+      class="webshop__button"
+      mat-button
+      routerLink="/webshop"
+      routerLinkActive="mat-accent"
+      [queryParams]="{ category: 'fruit' }">
+      Fruit
+    </button>
+    <button
+      class="webshop__button"
+      mat-button
+      routerLink="/webshop"
+      routerLinkActive="mat-accent"
+      [queryParams]="{ category: 'vlees' }">
+      Vlees
+    </button>
+    <button
+      class="webshop__button"
+      mat-button
+      routerLink="/webshop"
+      routerLinkActive="mat-accent"
+      [queryParams]="{ category: 'vis' }">
+      Vis
+    </button>
+    <button
+      class="webshop__cartIcon"
+      (click)="toggleCart($event)"
+      mat-button>
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+  </div>
+</div>
