@@ -4,10 +4,8 @@ import {
     stagger,
     animate,
     style,
-    group,
     query as q,
-    transition,
-    keyframes
+    transition
 } from '@angular/animations';
 
 const query = (

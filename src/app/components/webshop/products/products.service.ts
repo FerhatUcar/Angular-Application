@@ -13,12 +13,12 @@ export class ProductsService {
 
   constructor(private http: HttpClient) {}
 
-  getProduct(): Observable<Product[]> {
+  public getProduct(): Observable<Product[]> {
     return this.http.get<Product[]>(this._url).pipe(
       catchError(this.errorHandler));
   }
 
-  errorHandler(error: HttpErrorResponse) {
+  public errorHandler(error: HttpErrorResponse) {
     return throwError(error.message || 'Server error');
   }
 }

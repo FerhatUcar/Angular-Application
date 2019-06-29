@@ -2,16 +2,20 @@ import { Component } from '@angular/core';
 import { Pipe, PipeTransform } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 
-import { Product } from "../entities/product.entity";
-import { ProductsService } from './products.service';
-
+// rxjs
 import { filter, switchMap } from "rxjs/internal/operators";
+
+// entities
+import { Product } from "../entities/product.entity";
+
+// services
+import { ProductsService } from './products.service';
 
 
 @Component({
   moduleId: module.id,
   selector: 'products',
-  templateUrl: 'products.html',
+  templateUrl: 'products.html'
 })
 
 
@@ -19,7 +23,6 @@ export class ProductComponent {
   public products: Product[];
   public filteredProducts: Product[];
   public category: string;
-  public productService: ProductsService;
 
   constructor(_productService: ProductsService, route: ActivatedRoute) {
     _productService
@@ -37,6 +40,4 @@ export class ProductComponent {
           : this.products;
       })
     }
-
-    ngOnInit() {}
 }

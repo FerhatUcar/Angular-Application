@@ -4,7 +4,10 @@ import {
   MatInputModule,
   MatCardModule,
   MatMenuModule,
-  MatTableModule
+  MatTableModule,
+  MatDividerModule,
+  MatBadgeModule,
+  MatTooltipModule
 } from '@angular/material';
 
 import { MatIconModule } from '@angular/material/icon'
@@ -16,7 +19,10 @@ import { MatIconModule } from '@angular/material/icon'
     MatCardModule,
     MatMenuModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatDividerModule,
+    MatBadgeModule,
+    MatTooltipModule
   ],
   exports: [
     MatButtonModule,
@@ -24,7 +30,10 @@ import { MatIconModule } from '@angular/material/icon'
     MatCardModule,
     MatMenuModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatDividerModule,
+    MatBadgeModule,
+    MatTooltipModule
   ],
 })
 

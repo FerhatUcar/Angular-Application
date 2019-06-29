@@ -6,22 +6,55 @@ import {
 } from '@angular/core';
 
 import { ActivatedRoute } from "@angular/router";
+
+
+// rxjs
 import { Subscription} from "rxjs/index";
 import { reduce, switchMap } from "rxjs/internal/operators";
 
+
+// animations
+import {
+  trigger,
+  stagger,
+  animate,
+  style,
+  group,
+  state,
+  query as q,
+  transition,
+  keyframes
+} from '@angular/animations';
+
+
 // services
-import { ShoppingCartService, CartState } from "./shopping-cart.service";
+import { ShoppingCartService } from "./shopping-cart.service";
+
 
 // entities
 import { ProductInCart } from "../entities/productincart.entity";
+import { Product } from "../entities/product.entity";
+import { CartState } from "../entities/cartstate.entity";
 
 
 @Component({
   moduleId: module.id,
   selector: 'shopping-cart',
   templateUrl: './shopping-cart.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  animations: [
+    trigger('panelInOut', [
+      transition('void => *', [
+        style({transform: 'translateY(50%)'}),
+        animate(150)
+      ]),
+      transition('* => void', [
+        animate(150, style({transform: 'translateY(50%)'}))
+      ])
+    ])
+  ]
 })
+
 
 export class ShoppingCart {
   public productsInCart: ProductInCart[] = [];
@@ -33,18 +66,32 @@ export class ShoppingCart {
   public resetShoppingCart: string = 'RESET CART';
   public shippingCostCart: string;
   public shippingCartEmpty: string = 'Your shopping cart is empty';
+  public badge: number;
+
 
   constructor(
     private _cartService: ShoppingCartService,
     private changeDedectionRef: ChangeDetectorRef
   ) {}
 
-  RemoveProduct(_product: ProductInCart) {
+
+  public RemoveProduct(_product: ProductInCart): void {
     this.total = 0;
     this._cartService.removeProduct(_product.name);
   }
 
-  getTotal() {
+
+  public update() {
+    this.badge = 0;
+    for (let i = 0; i < this.productsInCart.length; i++){
+      let items = this.productsInCart[i];
+      this.badge += items.quantity;
+    }
+    return this.badge;
+  }
+
+
+  public getTotal() {
     this.total = 0;
     for (let i = 0; i < this.productsInCart.length; i++){
       let items = this.productsInCart[i];
@@ -53,34 +100,40 @@ export class ShoppingCart {
     return this.total;
   }
 
-  clearCart(_name: ProductInCart) {
+
+  public clearCart(_name: ProductInCart): void {
     this.resetCart();
     this.productsInCart.splice(0, 30);
   }
 
-  resetCart() {
+
+  public resetCart(): void {
     this.total = 0;
     for(let i = 0; i < this.productsInCart.length; i++){
       this.productsInCart[i].quantity = 0;
     }
   }
 
-  shippingCost() {
+
+  public shippingCost() {
     if (this.total <= 15) this.shippingCostCart = '€15';
     else this.shippingCostCart = 'Free shipping';
 
     return this.shippingCostCart;
   }
 
-  increase(_product: ProductInCart) {
+
+  public increase(_product: ProductInCart): void {
     this._cartService.updateCartItems(_product.quantity++);
   }
 
-  decrease(_product: ProductInCart) {
+
+  public decrease(_product: ProductInCart): void {
     this._cartService.updateCartItems(_product.quantity--);
   }
 
-  ngOnInit() {
+
+  public ngOnInit(): void {
     this.subscription = this._cartService.CartState
       .subscribe((state: CartState) => this.productsInCart = state.products);
 
@@ -88,11 +141,13 @@ export class ShoppingCart {
       .subscribe(value => this.quantity = value);
   }
 
-  ngOnDestroy() {
+
+  public ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 
-  ngAfterContentChecked(): void {
+
+  public ngAfterContentChecked(): void {
     this.changeDedectionRef.detectChanges();
   }
 }

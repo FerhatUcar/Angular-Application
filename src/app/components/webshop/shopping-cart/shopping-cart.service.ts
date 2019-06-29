@@ -3,29 +3,25 @@ import { Observable, Subject, BehaviorSubject } from "rxjs/index";
 
 // entities
 import { Product } from "../entities/product.entity";
+import { CartState } from "../entities/cartstate.entity";
 
 // components
 import { ProductComponent } from "../products/products";
 
 
-export interface CartState {
-  loaded: boolean;
-  products: Product[];
-}
-
-
 @Injectable()
 export class ShoppingCartService {
-  private totalProductItem: BehaviorSubject<number> = new BehaviorSubject<number>(0);
-  private cartSubject = new Subject<CartState>();
-  private products: Product[] = [];
-  private quantity: number = 1;
+  public totalProductItem: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  public cartSubject = new Subject<CartState>();
+  public products: Product[] = [];
+  public quantity: number = 1;
+  public CartState = this.cartSubject.asObservable();
+
 
   constructor() {}
 
-  CartState = this.cartSubject.asObservable();
 
-  addProduct(_product: Product) {
+  public addProduct(_product: Product): void {
     let isDuplicate = false;
 
     for(let i = 0; i < this.products.length; i++){
@@ -35,17 +31,18 @@ export class ShoppingCartService {
       }
     }
 
+    // adds product to cart if product is not duplicated
     if (!isDuplicate) this.products.push(_product);
 
     this.updateCartItems(_product.quantity++);
-
     this.cartSubject.next(<CartState>{
       loaded: true,
       products: this.products
     });
   }
 
-  removeProduct(_name: any) {
+
+  public removeProduct(_name: any): void {
     for(let i = 0; i < this.products.length; i++){
       if (_name == this.products[i].name){
         this.products[i].quantity = 0;
@@ -59,11 +56,13 @@ export class ShoppingCartService {
     });
   }
 
-  getCartItems() {
+
+  public getCartItems() {
     return this.totalProductItem.asObservable();
   }
 
-  updateCartItems(items: number) {
+
+  public updateCartItems(items: number): void {
     this.totalProductItem.next(items);
   }
 }

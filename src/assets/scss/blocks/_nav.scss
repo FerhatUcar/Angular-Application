@@ -44,12 +44,13 @@
       }
     }
   }
-}
 
-.hamburger {
-  transition: all 0.1s ease !important;
+  button.hamburger {
+    @include size(40px, 30px);
+    transition: all 0.1s ease !important;
 
-  span.bar {
-    background-color: white !important;
+    span.bar {
+      background-color: white !important;
+    }
   }
 }

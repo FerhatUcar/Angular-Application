@@ -32,11 +32,12 @@
       text-decoration: none; }
       .navbar__link:hover .navbar__text {
         font-size: 16px; }
-
-.hamburger {
-  transition: all 0.1s ease !important; }
-  .hamburger span.bar {
-    background-color: white !important; }
+  .navbar button.hamburger {
+    height: 30px;
+    width: 40px;
+    transition: all 0.1s ease !important; }
+    .navbar button.hamburger span.bar {
+      background-color: white !important; }
 
 .records {
   display: flex; }
@@ -83,7 +84,6 @@
   margin: 1rem 0 2rem 0;
   display: inline-flex;
   border-radius: 1rem;
-  min-height: 600px;
   width: 100%;
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
   .webshop h3 {
@@ -95,12 +95,14 @@
     flex-wrap: wrap;
     padding-right: 1rem;
     max-width: 745px;
-    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url("../img/webshop/white-bg.jpg") no-repeat;
-    background-size: cover; }
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40px, #d0d0d0 45px); }
     @media only screen and (max-width: 650px) {
       .webshop products {
         border-bottom-right-radius: 1rem;
         border-top-right-radius: 1rem; } }
+    .webshop products h3 {
+      flex: 0 0 100%;
+      height: 26px; }
   .webshop__close {
     height: 1.25rem;
     width: 1.25rem;
@@ -120,14 +122,18 @@
     border-top-right-radius: 1rem;
     min-height: 300px;
     min-width: 275px;
-    flex: 30%; }
+    flex: 30%;
+    transition: visibility 0s, opacity .3s linear; }
     @media only screen and (max-width: 650px) {
       .webshop__cart {
-        display: none; } }
+        visibility: hidden;
+        display: none;
+        opacity: 0; } }
   .webshop__total {
     color: white;
     border-top: solid 1px white;
-    padding: 1rem 0.5rem 0.5rem 0.5rem; }
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    transition: all .1s ease-in-out; }
     .webshop__total--shipment {
       display: flex;
       justify-content: space-between;
@@ -135,6 +141,8 @@
     .webshop__total--price {
       display: flex;
       justify-content: space-between; }
+    .webshop__total:hover {
+      background-color: rgba(255, 255, 255, 0.3); }
   .webshop__clear {
     border-top: solid 1px white;
     padding: 0.5rem;
@@ -168,13 +176,24 @@
       max-width: 90px;
       margin-right: 0.5rem; }
     .webshop__items--quantity {
+      display: flex;
+      align-items: center;
+      align-content: center;
       flex-grow: 1; }
+      .webshop__items--quantity span {
+        padding: 0 5px; }
+      .webshop__items--quantity button {
+        background: none;
+        border: none;
+        cursor: pointer; }
+        .webshop__items--quantity button:disabled .mat-icon.mat-accent {
+          color: #d0d0d0; }
   .webshop__empty {
     color: white;
     margin: 1rem 0.5rem; }
   .webshop__sticky {
     position: fixed;
-    top: 0;
+    top: 15px;
     left: 20px; }
   .webshop__categories {
     width: 75px;
@@ -183,7 +202,7 @@
     display: flex;
     height: 100%; }
   .webshop__button {
-    margin: 0 auto !important;
+    margin: 3px auto !important;
     display: block !important; }
   .webshop__menu {
     width: 300px;
@@ -207,22 +226,44 @@
       display: block; }
     .webshop__card mat-card-actions button {
       width: 100%; }
+  .webshop .mat-divider {
+    border-color: white; }
 
 .is-visible {
+  visibility: visible;
   display: block;
+  opacity: 1;
   width: calc(100% - 77px);
   position: absolute;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.95);
   left: 76px; }
+
+.accent {
+  background: #ff4081 !important; }
+
+.product {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin: 10px auto;
+  background-size: contain;
+  display: block;
+  cursor: pointer;
+  border: 0; }
+  .product__fruit {
+    background: url("../img/webshop/fruit/fruit.svg") no-repeat; }
+  .product__fish {
+    background: url("../img/webshop/vis/fish.svg") no-repeat; }
+  .product__meat {
+    background: url("../img/webshop/vlees/meat.svg") no-repeat; }
 
 html, body {
   overflow-x: hidden; }
 
 body {
   font-family: 'Squada One', cursive;
-  color: black;
-  background-size: auto;
-  background: black url("../img/android.jpg") no-repeat;
+  background-size: cover;
+  background: url("../img/android.jpg") no-repeat center center fixed;
+  height: 100%;
   margin: 0;
   padding: 0; }
 

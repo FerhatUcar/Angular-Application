@@ -5,16 +5,20 @@
     {{ shippingCartEmpty }}
   </div>
 
-  <div *ngFor="let item of productsInCart" class="webshop__items">
+  <div *ngFor="let item of productsInCart" class="webshop__items" [@panelInOut]>
     <button class="webshop__close" (click)="RemoveProduct(item)"></button>
     <span class="webshop__items--name">{{item.name}}</span>
 
     <div class="webshop__items--quantity">
       <button
         [attr.disabled]="item.quantity === 0 ? true : null"
-        (click)="decrease(item)">-</button>
+        (click)="decrease(item)">
+        <mat-icon color="accent">expand_more</mat-icon>
+      </button>
       <span name="total" ngDefaultControl> {{ item.quantity }} </span>
-      <button (click)="increase(item)">+</button>
+      <button (click)="increase(item)">
+        <mat-icon color="accent">expand_less</mat-icon>
+      </button>
     </div>
 
     <span class="webshop__items--price">
@@ -49,7 +53,7 @@
   </div>
 
   <div class="webshop__checkout" *ngIf="productsInCart == true || productsInCart.length >= 1">
-    <button mat-raised-button color="primary">
+    <button mat-raised-button color="accent">
       {{ checkOut }}
       <mat-icon>payment</mat-icon>
     </button>

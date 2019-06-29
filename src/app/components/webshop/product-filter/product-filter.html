@@ -5,33 +5,40 @@
       mat-button
       routerLink="/webshop"
       routerLinkActive="mat-accent"
+      matTooltip="All products"
+      matTooltipPosition="above"
+      matTooltipClass="accent"
       [queryParams]="{ category: '' }">
-      Alles
+      <mat-icon matBadgeColor="accent" matBadge="{{ update() }}">apps</mat-icon>
     </button>
+    <mat-divider></mat-divider>
     <button
       class="webshop__button"
       mat-button
       routerLink="/webshop"
       routerLinkActive="mat-accent"
       [queryParams]="{ category: 'fruit' }">
-      Fruit
+      <i class="product product__fruit"></i>
     </button>
+    <mat-divider></mat-divider>
     <button
       class="webshop__button"
       mat-button
       routerLink="/webshop"
       routerLinkActive="mat-accent"
       [queryParams]="{ category: 'vlees' }">
-      Vlees
+      <i class="product product__meat"></i>
     </button>
+    <mat-divider></mat-divider>
     <button
       class="webshop__button"
       mat-button
       routerLink="/webshop"
       routerLinkActive="mat-accent"
       [queryParams]="{ category: 'vis' }">
-      Vis
+      <i class="product product__fish"></i>
     </button>
+    <mat-divider></mat-divider>
     <button
       class="webshop__cartIcon"
       (click)="toggleCart($event)"
