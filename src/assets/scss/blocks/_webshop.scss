@@ -24,7 +24,6 @@
     flex-wrap: wrap;
     padding-right: 1rem;
     max-width: $products-max-width;
-
     background:
       linear-gradient(
           to bottom,
@@ -154,7 +153,7 @@
         cursor: pointer;
 
         &:disabled {
-          .mat-icon.mat-accent {
+          .mat-icon.mat-warn {
             color: $color-grey-2;
           }
         }
@@ -172,11 +171,10 @@
   }
 
   &__categories {
-    width: 75px;
+    @include size(75px, 100%);
     color: white;
     flex-flow: column;
     display: flex;
-    height: 100%;
   }
 
   &__button {
@@ -233,15 +231,14 @@
 }
 
 .is-visible {
+  @include position(absolute, null null null 76px);
   visibility: visible;
   display: block;
   opacity: 1;
   width: calc(100% - 77px);
-  position: absolute;
   background: $black-color-opacity-095;
-  left: 76px;
 }
 
-.accent {
-  background: #ff4081 !important;
+.is-warn {
+  background: $color-warn;
 }

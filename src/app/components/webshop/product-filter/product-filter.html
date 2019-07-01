@@ -4,19 +4,19 @@
       class="webshop__button"
       mat-button
       routerLink="/webshop"
-      routerLinkActive="mat-accent"
+      routerLinkActive="mat-warn"
       matTooltip="All products"
       matTooltipPosition="above"
-      matTooltipClass="accent"
+      matTooltipClass="is-warn"
       [queryParams]="{ category: '' }">
-      <mat-icon matBadgeColor="accent" matBadge="{{ update() }}">apps</mat-icon>
+      <mat-icon matBadgeColor="warn" matBadge="{{ update() }}">apps</mat-icon>
     </button>
     <mat-divider></mat-divider>
     <button
       class="webshop__button"
       mat-button
       routerLink="/webshop"
-      routerLinkActive="mat-accent"
+      routerLinkActive="mat-warn"
       [queryParams]="{ category: 'fruit' }">
       <i class="product product__fruit"></i>
     </button>
@@ -25,7 +25,7 @@
       class="webshop__button"
       mat-button
       routerLink="/webshop"
-      routerLinkActive="mat-accent"
+      routerLinkActive="mat-warn"
       [queryParams]="{ category: 'vlees' }">
       <i class="product product__meat"></i>
     </button>
@@ -34,7 +34,7 @@
       class="webshop__button"
       mat-button
       routerLink="/webshop"
-      routerLinkActive="mat-accent"
+      routerLinkActive="mat-warn"
       [queryParams]="{ category: 'vis' }">
       <i class="product product__fish"></i>
     </button>

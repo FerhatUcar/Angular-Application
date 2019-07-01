@@ -7,7 +7,8 @@ import { routing } from './app.routing';
 
 // components
 import { AppComponent }  from './app.component';
-import { RecordsComponent, InputErrorComponent }  from './components/records/records';
+import { RecordsComponent }  from './components/records/records';
+import { InputErrorComponent }  from './components/records/inputvalidate';
 import { AboutComponent }  from './components/about/about.component';
 import { WebshopComponent }  from './components/webshop/webshop';
 import { HomeComponent }  from './components/home';
@@ -41,12 +42,12 @@ import { ShoppingCartService } from "./components/webshop/shopping-cart/shopping
   declarations: [
     AppComponent,
     RecordsComponent,
+    InputErrorComponent,
     HomeComponent,
     AboutComponent,
     ProductComponent,
     WebshopComponent,
     NavigationComponent,
-    InputErrorComponent,
     ProductFilter,
     ProductCard,
     ShoppingCart

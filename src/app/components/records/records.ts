@@ -1,11 +1,16 @@
 import { Component, ViewChild } from '@angular/core';
-import {
-  Validators,
-  FormControl,
-  FormGroup,
-  FormGroupDirective
-} from '@angular/forms';
-import { MyErrorStateModule } from '../../validator.module';
+import { FormGroup, FormGroupDirective } from '@angular/forms';
+
+
+// components
+import { InputErrorComponent } from "./inputvalidate";
+
+
+// @ts-ignore
+// entities
+import { contactTypes } from 'entities/contacttypes.entity';
+
+
 
 @Component({
   moduleId: module.id,
@@ -13,45 +18,18 @@ import { MyErrorStateModule } from '../../validator.module';
   templateUrl: 'records.html'
 })
 
-export class InputErrorComponent {
-  controls = {
-    name: new FormControl('',[Validators.required]),
-    street: new FormControl('',[Validators.required]),
-    number: new FormControl('',[Validators.required]),
-    code: new FormControl('',[Validators.required]),
-    city: new FormControl('',[Validators.required]),
-  };
-  matcher = new MyErrorStateModule();
-}
-
-interface contactTypes {
-  name: string;
-  street: string;
-  number: number;
-  code: string;
-  city: string;
-}
-
-class Contact implements contactTypes {
-  public name: string;
-  public street: string;
-  public number: number;
-  public code: string;
-  public city: string;
 
 
-  constructor(ct: contactTypes) {
-    ct.name = '';
-    ct.street = '';
-    ct.code = '';
-    ct.city = '';
-  }
-}
-
-export class RecordsComponent extends InputErrorComponent {
+export class RecordsComponent extends InputErrorComponent implements contactTypes {
   @ViewChild(FormGroupDirective, null) form: any;
   private newContactForm: FormGroup;
-  private records: any;
+  private records: contactTypes[];
+
+  public name: string = '';
+  public street: string = '';
+  public number: number;
+  public code: string = '';
+  public city: string = '';
 
   constructor() {
     super();
@@ -72,7 +50,5 @@ export class RecordsComponent extends InputErrorComponent {
     }
   };
 
-  removeRecord = (index: any) => {
-    this.records.splice(index, 1);
-  }
+  removeRecord = (index: any) => this.records.splice(index, 1);
 }

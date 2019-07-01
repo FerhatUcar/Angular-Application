@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+
+// animations
 import {
     trigger,
     stagger,
@@ -8,11 +10,14 @@ import {
     transition
 } from '@angular/animations';
 
+
+// queries
 const query = (
     s: any,
     a: any,
     o = { optional: true }
 ) => q(s, a, o);
+
 
 export const homeTransition = trigger('homeTransition', [
     transition(':enter', [
