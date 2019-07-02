@@ -45,9 +45,8 @@ export class ProductComponent {
         let title = document.querySelector('.products__title');
 
         // change title based on category
-        if (this.category === '') title.innerHTML = 'Products | ALL';
-        else title.innerHTML = `${'Products | ' + this.category.toLocaleUpperCase()}`;
-
+        if (this.category === '' || this.category == undefined) title.innerHTML = 'Products | ALL';
+        else title.innerHTML = `${'Products | ' + this.category.toUpperCase()}`;
 
         if (!this.filteredProducts) return [];
 

@@ -17,6 +17,7 @@ import { NavigationComponent } from './components/navigation/navigation';
 import { ProductFilter } from './components/webshop/product-filter/product-filter';
 import { ShoppingCart } from './components/webshop/shopping-cart/shopping-cart';
 import { ProductCard } from './components/webshop/product-card/product-card';
+import { CheckoutComponent } from './components/webshop/checkout/checkout';
 
 // materials
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -50,7 +51,8 @@ import { ShoppingCartService } from "./components/webshop/shopping-cart/shopping
     NavigationComponent,
     ProductFilter,
     ProductCard,
-    ShoppingCart
+    ShoppingCart,
+    CheckoutComponent
   ],
   bootstrap: [AppComponent],
   providers: [

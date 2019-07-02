@@ -93,10 +93,12 @@ export class ShoppingCart {
 
   public getTotal() {
     this.total = 0;
+
     for (let i = 0; i < this.productsInCart.length; i++){
       let items = this.productsInCart[i];
       this.total += items.price * items.quantity;
     }
+
     return this.total;
   }
 

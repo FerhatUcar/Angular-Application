@@ -31,10 +31,12 @@ export class ShoppingCartService {
       }
     }
 
-    // adds product to cart if product is not duplicated
+    // adds product to cart if product is not same
     if (!isDuplicate) this.products.push(_product);
 
+    // updates product quantity
     this.updateCartItems(_product.quantity++);
+
     this.cartSubject.next(<CartState>{
       loaded: true,
       products: this.products

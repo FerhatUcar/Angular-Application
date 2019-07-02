@@ -177,6 +177,12 @@
     display: flex;
   }
 
+  &__back {
+    width: 100%;
+    display: block;
+    margin: 1rem;
+  }
+
   &__button {
     margin: 3px auto !important;
     display: block !important;

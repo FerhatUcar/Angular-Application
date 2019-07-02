@@ -6,7 +6,12 @@
   </div>
 
   <div *ngFor="let item of productsInCart" class="webshop__items" [@panelInOut]>
-    <button class="webshop__close" (click)="RemoveProduct(item)"></button>
+    <button
+      class="webshop__close"
+      matTooltip="Remove this product from cart"
+      matTooltipPosition="above"
+      matTooltipClass="is-warn"
+      (click)="RemoveProduct(item)"></button>
     <span class="webshop__items--name">{{ item.name }}</span>
 
     <div class="webshop__items--quantity">
@@ -53,7 +58,7 @@
   </div>
 
   <div class="webshop__checkout" *ngIf="productsInCart == true || productsInCart.length >= 1">
-    <button mat-raised-button color="primary">
+    <button routerLink="/webshop/checkout" mat-raised-button color="primary">
       {{ checkOut }}
       <mat-icon>payment</mat-icon>
     </button>
