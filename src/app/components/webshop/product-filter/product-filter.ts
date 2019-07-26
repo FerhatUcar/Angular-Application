@@ -52,10 +52,10 @@ export class ProductFilter {
     this.badge = 0;
 
     if (this.productsInCart.length >= 1) {
-      for (let i = 0; i < this.productsInCart.length; i++){
-        let items = this.productsInCart[i];
-        this.badge += items.quantity;
-      }
+      this.productsInCart.map((product) => {
+        this.badge += product.quantity;
+        return product;
+      })
       return this.badge;
     }
   }
@@ -78,9 +78,13 @@ export class ProductFilter {
     const element: HTMLDivElement = document.querySelector('.webshop__cart');
 
     if (!element.classList.contains('is-visible'))
-      cartIcon.addEventListener('click',() => element.classList.add('is-visible'));
+      cartIcon.addEventListener('click',() => {
+        element.classList.add('is-visible')
+      });
     else
-      cartIcon.addEventListener('click',() => element.classList.remove('is-visible'));
+      cartIcon.addEventListener('click',() => {
+        element.classList.remove('is-visible')
+      });
   }
 
 

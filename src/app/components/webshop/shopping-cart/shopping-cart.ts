@@ -83,10 +83,12 @@ export class ShoppingCart {
 
   public update() {
     this.badge = 0;
-    for (let i = 0; i < this.productsInCart.length; i++){
-      let items = this.productsInCart[i];
-      this.badge += items.quantity;
-    }
+
+    this.productsInCart.map((product) => {
+      this.badge += product.quantity;
+      return product;
+    })
+
     return this.badge;
   }
 
@@ -94,10 +96,10 @@ export class ShoppingCart {
   public getTotal() {
     this.total = 0;
 
-    for (let i = 0; i < this.productsInCart.length; i++){
-      let items = this.productsInCart[i];
-      this.total += items.price * items.quantity;
-    }
+    this.productsInCart.map((product) => {
+      this.total += product.price * product.quantity;
+      return product;
+    })
 
     return this.total;
   }
@@ -111,9 +113,11 @@ export class ShoppingCart {
 
   public resetCart(): void {
     this.total = 0;
-    for(let i = 0; i < this.productsInCart.length; i++){
-      this.productsInCart[i].quantity = 0;
-    }
+
+    this.productsInCart.map((product) => {
+      product.quantity = 0;
+      return product;
+    })
   }
 
 

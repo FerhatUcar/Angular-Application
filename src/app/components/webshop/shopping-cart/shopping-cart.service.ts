@@ -24,12 +24,10 @@ export class ShoppingCartService {
   public addProduct(_product: Product): void {
     let isDuplicate = false;
 
-    for(let i = 0; i < this.products.length; i++){
-      if (_product.name == this.products[i].name){
-        isDuplicate = true;
-        break;
-      }
-    }
+    this.products.map((product) => {
+      if (_product.name == product.name) isDuplicate = true;
+      return product;
+    });
 
     // adds product to cart if product is not same
     if (!isDuplicate) this.products.push(_product);
@@ -45,13 +43,15 @@ export class ShoppingCartService {
 
 
   public removeProduct(_name: any): void {
-    for(let i = 0; i < this.products.length; i++){
-      if (_name == this.products[i].name){
-        this.products[i].quantity = 0;
-      }
-    }
+    this.products.map((product) => {
+      if (_name == product.name) product.quantity = 0
+      return product;
+    })
 
-    this.products = this.products.filter((_item: any) => _item.name !== _name);
+    this.products = this.products.filter((_item: any) => {
+      _item.name !== _name
+    });
+
     this.cartSubject.next(<CartState>{
       loaded: false,
       products: this.products
