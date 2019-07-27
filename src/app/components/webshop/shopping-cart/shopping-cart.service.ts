@@ -48,9 +48,7 @@ export class ShoppingCartService {
       return product;
     })
 
-    this.products = this.products.filter((_item: any) => {
-      _item.name !== _name
-    });
+    this.products = this.products.filter((_item: any) => _item.name !== _name);
 
     this.cartSubject.next(<CartState>{
       loaded: false,

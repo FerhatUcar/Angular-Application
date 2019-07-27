@@ -68,48 +68,38 @@ export class ShoppingCart {
   public shippingCartEmpty: string = 'Your shopping cart is empty';
   public badge: number;
 
-
   constructor(
     private _cartService: ShoppingCartService,
     private changeDedectionRef: ChangeDetectorRef
   ) {}
-
 
   public RemoveProduct(_product: ProductInCart): void {
     this.total = 0;
     this._cartService.removeProduct(_product.name);
   }
 
-
   public update() {
     this.badge = 0;
-
     this.productsInCart.map((product) => {
       this.badge += product.quantity;
       return product;
     })
-
     return this.badge;
   }
 
-
   public getTotal() {
     this.total = 0;
-
     this.productsInCart.map((product) => {
       this.total += product.price * product.quantity;
       return product;
     })
-
     return this.total;
   }
-
 
   public clearCart(_name: ProductInCart): void {
     this.resetCart();
     this.productsInCart.splice(0, 30);
   }
-
 
   public resetCart(): void {
     this.total = 0;
