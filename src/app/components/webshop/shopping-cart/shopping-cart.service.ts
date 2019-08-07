@@ -17,10 +17,6 @@ export class ShoppingCartService {
   public quantity: number = 1;
   public CartState = this.cartSubject.asObservable();
 
-
-  constructor() {}
-
-
   public addProduct(_product: Product): void {
     let isDuplicate = false;
 

@@ -9,7 +9,7 @@ import { CheckoutComponent } from "./components/webshop/checkout/checkout";
 
 const appRoutes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomeComponent,
     pathMatch: 'full',
     data: { state: 'home'}

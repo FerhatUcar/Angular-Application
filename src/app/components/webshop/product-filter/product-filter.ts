@@ -62,8 +62,7 @@ export class ProductFilter {
 
 
   // makes category menu sticky on scroll
-  @HostListener('window:scroll', ['$event'])
-  public onWindowScroll(): void {
+  @HostListener('window:scroll', ['$event']) onWindowScroll() {
     const element: HTMLDivElement = document.querySelector('.webshop__buttons');
 
     if (window.pageYOffset > 150) element.classList.add('webshop__sticky');
@@ -72,8 +71,7 @@ export class ProductFilter {
 
 
   // toggle menu with cart icon on mobile
-  @HostListener('window:click', ['$event'])
-  public toggleCart(event: any): void {
+  @HostListener('window:click', ['$event']) toggleCart(event: any) {
     const cartIcon: HTMLButtonElement = document.querySelector('.webshop__cartIcon');
     const element: HTMLDivElement = document.querySelector('.webshop__cart');
 

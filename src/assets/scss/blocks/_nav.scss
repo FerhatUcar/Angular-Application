@@ -8,6 +8,7 @@
 }
 
 .navbar {
+  color: green;
   transition: all 0.2s linear;
   padding: $gutter-sm;
   background: $black-color-opacity-075;
@@ -26,6 +27,11 @@
     }
   }
 
+  &--active {
+    background-color: rgba(255,255,255,0.2) !important;
+    color: black !important;
+  }
+
   &__link {
     @include padding(8px 8px 8px 32px !important);
     text-decoration: none;
@@ -33,6 +39,7 @@
     width: 100%;
     display: block;
     transition: 0.3s;
+    border-radius: 0 !important;
 
     &:hover {
       background-color: white;

@@ -42,7 +42,7 @@ export class ProductComponent {
       .subscribe(params => {
         this.category = params.get('category');
 
-        let title = document.querySelector('.products__title');
+        const title = document.querySelector('.products__title');
 
         // change title based on category
         if (this.category === '' || this.category == undefined) title.innerHTML = 'Products | ALL';
