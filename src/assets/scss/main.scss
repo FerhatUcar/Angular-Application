@@ -56,6 +56,7 @@ body {
 p {
   color: white;
   font-size: 1.5rem;
+  line-height: 1.5;
 }
 
 a {
@@ -96,4 +97,12 @@ h3 {
   height: $gutter;
   border-radius: 50%;
   margin: 0 5px 0 0;
+}
+
+a {
+  color: $color-pink;
+
+  &:hover {
+    color: darken($color-pink, 10%);
+  }
 }

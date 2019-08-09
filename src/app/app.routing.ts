@@ -10,7 +10,7 @@ import { CsvComponent } from "./components/csv/csv";
 
 const appRoutes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: HomeComponent,
     pathMatch: 'full',
     data: { state: 'home'}
