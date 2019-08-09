@@ -23,6 +23,12 @@ export class RecordsComponent extends InputErrorComponent implements contactType
   private newContactForm: FormGroup;
   private records: contactTypes[];
 
+  public name: string = '';
+  public street: string = '';
+  public number: number;
+  public code: string = '';
+  public city: string = '';
+
   constructor() {
     super();
     this.records = [

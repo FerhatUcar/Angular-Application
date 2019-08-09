@@ -1,78 +1,82 @@
 <div class="container">
-  <h1>Add Record</h1>
+  <div class="container__box">
+    <h1>Add Record</h1>
+  </div>
 
-  <div class="records">
-    <div class="records__input">
-      <form [formGroup]="newContactForm" class="records__form" (ngSubmit)="pushRecord()">
-        <mat-form-field class="example-full-width">
-          <input matInput
-                 name="name"
-                 placeholder="Name"
-                 formControlName="name"
-                 required>
-          <mat-error *ngIf="controls.name.errors && controls.name.errors.required">
-            Name is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
-        <br>
-        <mat-form-field class="example-full-width">
-          <input matInput
-                 name="street"
-                 placeholder="Street"
-                 formControlName="street"
-                 required>
-          <mat-error *ngIf="controls.street.errors && controls.street.errors.required">
-            Street is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
-        <br>
-        <mat-form-field class="example-full-width">
-          <input matInput
-                 name="number"
-                 placeholder="Number"
-                 formControlName="number"
-                 required>
-          <mat-error *ngIf="controls.number.errors && controls.number.errors.required">
-            Number is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
-        <br>
-        <mat-form-field class="example-full-width">
-          <input matInput
-                 name="code"
-                 placeholder="Zipcode"
-                 formControlName="code"
-                 required>
-          <mat-error *ngIf="controls.code.errors && controls.code.errors.required">
-            Street is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
-        <br>
-        <mat-form-field class="example-full-width">
-          <input matInput
-                 name="city"
-                 placeholder="City"
-                 formControlName="city"
-                 required>
-          <mat-error *ngIf="controls.city.errors && controls.city.errors.required">
-            City is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
-        <br><br>
-        <button mat-raised-button color="primary" type="submit">Add record</button>
-      </form>
-    </div>
-    <div class="records__output">
-      <ul class="records__list">
-        <li class="records__listitem" *ngFor="let i of records; let recordIndex = index">
-          <a mat-mini-fab color="warn" class="records__delete" (click)="removeRecord(recordIndex)">X</a>
-          <strong>Name:</strong> {{ i.name }}<br>
-          <strong>Street:</strong> {{ i.street }}<br>
-          <strong>Number:</strong> {{ i.number }}<br>
-          <strong>Code:</strong> {{ i.code }}<br>
-          <strong>City:</strong> {{ i.city }}<br>
-        </li>
-      </ul>
+  <div class="container__box">
+    <div class="records">
+      <div class="records__input">
+        <form [formGroup]="newContactForm" class="records__form" (ngSubmit)="pushRecord()">
+          <mat-form-field class="example-full-width">
+            <input matInput
+                   name="name"
+                   placeholder="Name"
+                   formControlName="name"
+                   required>
+            <mat-error *ngIf="controls.name.errors && controls.name.errors.required">
+              Name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field class="example-full-width">
+            <input matInput
+                   name="street"
+                   placeholder="Street"
+                   formControlName="street"
+                   required>
+            <mat-error *ngIf="controls.street.errors && controls.street.errors.required">
+              Street is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field class="example-full-width">
+            <input matInput
+                   name="number"
+                   placeholder="Number"
+                   formControlName="number"
+                   required>
+            <mat-error *ngIf="controls.number.errors && controls.number.errors.required">
+              Number is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field class="example-full-width">
+            <input matInput
+                   name="code"
+                   placeholder="Zipcode"
+                   formControlName="code"
+                   required>
+            <mat-error *ngIf="controls.code.errors && controls.code.errors.required">
+              Street is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field class="example-full-width">
+            <input matInput
+                   name="city"
+                   placeholder="City"
+                   formControlName="city"
+                   required>
+            <mat-error *ngIf="controls.city.errors && controls.city.errors.required">
+              City is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <br><br>
+          <button mat-raised-button color="primary" type="submit">Add record</button>
+        </form>
+      </div>
+      <div class="records__output">
+        <ul class="records__list">
+          <li class="records__listitem" *ngFor="let i of records; let recordIndex = index">
+            <a mat-mini-fab color="warn" class="records__delete" (click)="removeRecord(recordIndex)">X</a>
+            <strong>Name:</strong> {{ i.name }}<br>
+            <strong>Street:</strong> {{ i.street }}<br>
+            <strong>Number:</strong> {{ i.number }}<br>
+            <strong>Code:</strong> {{ i.code }}<br>
+            <strong>City:</strong> {{ i.city }}<br>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

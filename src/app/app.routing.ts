@@ -6,6 +6,7 @@ import { AboutComponent } from './components/about/about.component';
 import { RecordsComponent } from './components/records/records';
 import { WebshopComponent } from './components/webshop/webshop';
 import { CheckoutComponent } from "./components/webshop/checkout/checkout";
+import { CsvComponent } from "./components/csv/csv";
 
 const appRoutes: Routes = [
   {
@@ -33,7 +34,11 @@ const appRoutes: Routes = [
     path: "webshop/checkout",
     component: CheckoutComponent ,
     data: { state: 'webshop'}
-  }
+  },
+  {
+    path: 'csv',
+    component: CsvComponent
+  },
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes, {

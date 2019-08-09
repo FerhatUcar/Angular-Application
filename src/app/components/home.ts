@@ -63,7 +63,7 @@ export const homeTransition = trigger('homeTransition', [
 export class HomeComponent  {
     header_title: string;
     Arr = Array;
-    num: number = 25;
+    num: number = 14;
 
     constructor(){
         this.header_title = 'Ucar Creations';

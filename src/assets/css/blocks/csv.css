@@ -1,0 +1,32 @@
+.csv {
+  padding: 20px; }
+  .csv__button button {
+    width: 100%; }
+  .csv__box {
+    background: white;
+    margin-top: 20px;
+    padding: 0 20px 20px 20px; }
+    .csv__box table {
+      font-family: Roboto, "Helvetica Neue",sans-serif;
+      background: white;
+      color: black;
+      width: 100%;
+      text-align: left;
+      border-collapse: collapse;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+      .csv__box table td, .csv__box table th {
+        border-bottom: 1px solid #c1c1c1;
+        padding: 10px; }
+      .csv__box table thead {
+        background: #F6F6F6;
+        font-size: 12px;
+        font-weight: 500; }
+        .csv__box table thead th {
+          color: #3f3f3f;
+          text-align: left; }
+      .csv__box table tbody tr {
+        transition: all .2s ease; }
+        .csv__box table tbody tr:hover {
+          background: #eaeaea; }
+    .csv__box .mat-form-field {
+      width: 100%; }

@@ -45,7 +45,8 @@
       background-color: white !important; }
 
 .records {
-  display: flex; }
+  display: flex;
+  padding: 20px; }
   @media only screen and (max-width: 39.65625em) {
     .records {
       flex-wrap: wrap; } }
@@ -57,12 +58,11 @@
     margin-bottom: 20px;
     padding: 20px;
     border: 1px solid rgba(0, 0, 0, 0.125);
-    background: rgba(240, 248, 255, 0.75); }
+    background: white; }
   .records__form {
-    background: rgba(240, 248, 255, 0.75);
+    background: white;
     border: 1px solid rgba(0, 0, 0, 0.125);
-    padding: 20px;
-    margin-bottom: 20px; }
+    padding: 20px; }
     .records__form .mat-form-field {
       width: 100%; }
   .records__delete {
@@ -264,11 +264,43 @@
   .product__meat {
     background: url("../img/webshop/vlees/meat.svg") no-repeat; }
 
+.csv {
+  padding: 20px; }
+  .csv__button button {
+    width: 100%; }
+  .csv__box {
+    background: white;
+    margin-top: 20px;
+    padding: 0 20px 20px 20px; }
+    .csv__box table {
+      font-family: Roboto, "Helvetica Neue",sans-serif;
+      background: white;
+      color: black;
+      width: 100%;
+      text-align: left;
+      border-collapse: collapse;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+      .csv__box table td, .csv__box table th {
+        border-bottom: 1px solid #c1c1c1;
+        padding: 10px; }
+      .csv__box table thead {
+        background: #F6F6F6;
+        font-size: 12px;
+        font-weight: 500; }
+        .csv__box table thead th {
+          color: #3f3f3f;
+          text-align: left; }
+      .csv__box table tbody tr {
+        transition: all .2s ease; }
+        .csv__box table tbody tr:hover {
+          background: #eaeaea; }
+    .csv__box .mat-form-field {
+      width: 100%; }
+
 html, body {
   overflow-x: hidden; }
 
 body {
-  color: red;
   font-family: 'Squada One', cursive;
   background-size: cover;
   background: url("../img/android.jpg") no-repeat center center fixed;
@@ -281,16 +313,21 @@ body {
   max-width: 940px;
   overflow: hidden;
   min-height: 100%;
-  margin: 0 1rem; }
+  margin: 0 20px; }
   @media only screen and (min-width: 60em) {
     .container {
       margin: 0 auto;
-      padding: 0 1rem;
+      padding: 0 20px;
       max-width: 1500px; } }
   .container__box {
     background: rgba(0, 0, 0, 0.75);
     display: inline-block;
-    padding: 1rem; }
+    width: 100%;
+    margin-top: 20px; }
+    .container__box p {
+      margin-left: 20px; }
+  .container__balls {
+    margin: 20px; }
 
 p {
   color: white;
@@ -300,11 +337,11 @@ a {
   line-height: 1.7; }
 
 h1 {
-  margin-top: 1rem;
+  margin: 1rem;
   font-size: 4rem;
   color: white; }
   h1 span {
-    color: rgba(0, 0, 0, 0.75);
+    color: #d70098;
     text-decoration: underline;
     text-decoration-color: white; }
 
@@ -323,8 +360,8 @@ h3 {
 
 .block {
   background: white;
-  float: left;
+  display: inline-block;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  margin: 5px; }
+  margin: 0 5px 0 0; }

@@ -3,6 +3,7 @@
 
 .records {
   display: flex;
+  padding: $gutter;
 
   @include screen-phone {
     flex-wrap: wrap;
@@ -18,14 +19,13 @@
     margin-bottom: $gutter;
     padding: $gutter;
     border: 1px solid rgba(0, 0, 0, 0.125);
-    background: $white-color-opacity-075;
+    background: white;
   }
 
   &__form {
-    background: $white-color-opacity-075;
+    background: white;
     border: 1px solid rgba(0, 0, 0, 0.125);
     padding: $gutter;
-    margin-bottom: $gutter;
 
     .mat-form-field {
       width: 100%;

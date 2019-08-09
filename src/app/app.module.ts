@@ -18,15 +18,20 @@ import { ProductFilter } from './components/webshop/product-filter/product-filte
 import { ShoppingCart } from './components/webshop/shopping-cart/shopping-cart';
 import { ProductCard } from './components/webshop/product-card/product-card';
 import { CheckoutComponent } from './components/webshop/checkout/checkout';
+import {CsvComponent} from './components/csv/csv';
+import {CsvService} from './components/csv/csv.service';
+import {FilterPipe} from './components/csv/filters/filter'
 
 // materials
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MaterialModule } from './material.module';
+import { MatTableModule } from "@angular/material";
 
 // services
 import { ProductsService } from "./components/webshop/products/products.service";
 import { ShoppingCartService } from "./components/webshop/shopping-cart/shopping-cart.service";
+
 
 
 @NgModule({
@@ -38,10 +43,12 @@ import { ShoppingCartService } from "./components/webshop/shopping-cart/shopping
     BrowserAnimationsModule,
     MaterialModule,
     MatSidenavModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule
   ],
   declarations: [
     AppComponent,
+    CsvComponent,
     RecordsComponent,
     InputErrorComponent,
     HomeComponent,
@@ -52,12 +59,15 @@ import { ShoppingCartService } from "./components/webshop/shopping-cart/shopping
     ProductFilter,
     ProductCard,
     ShoppingCart,
-    CheckoutComponent
+    CheckoutComponent,
+    FilterPipe
+
   ],
   bootstrap: [AppComponent],
   providers: [
     ProductsService,
-    ShoppingCartService
+    ShoppingCartService,
+    CsvService
   ],
 })
 export class AppModule { }

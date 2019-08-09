@@ -4,6 +4,7 @@
 @import "blocks/records";
 @import "blocks/webshop";
 @import "blocks/icons";
+@import "blocks/csv";
 
 @import url(https://fonts.googleapis.com/css?family=Squada+One);
 
@@ -15,7 +16,6 @@ html, body {
 
 
 body {
-  color: red;
   font-family: 'Squada One', cursive;
   background-size: cover;
   background: url("../img/android.jpg") no-repeat center center fixed;
@@ -29,18 +29,27 @@ body {
   max-width: 940px;
   overflow: hidden;
   min-height: 100%;
-  margin: 0 1rem;
+  margin: 0 $gutter;
 
   @include screen-min-container {
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 $gutter;
     max-width: 1500px;
   }
 
   &__box {
     background: $black-color-opacity-075;
     display: inline-block;
-    padding: 1rem;
+    width: 100%;
+    margin-top: $gutter;
+
+    p {
+      margin-left: $gutter;
+    }
+  }
+
+  &__balls {
+    margin: $gutter;
   }
 }
 
@@ -54,13 +63,12 @@ a {
 }
 
 h1 {
-  margin-top: 1rem;
+  margin: 1rem;
   font-size: $header-title;
   color: white;
 
-
   span {
-    color: $black-color-opacity-075;
+    color: $color-pink;
     text-decoration: underline;
     text-decoration-color: white;
   }
@@ -83,9 +91,9 @@ h3 {
 
 .block {
   background: white;
-  float: left;
+  display: inline-block;
   width: $gutter;
   height: $gutter;
   border-radius: 50%;
-  margin: 5px;
+  margin: 0 5px 0 0;
 }

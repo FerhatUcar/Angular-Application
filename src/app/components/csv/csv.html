@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="container__box">
+    <h1>CSV Reader</h1>
+  </div>
+  <div class="container__box">
+    <div class="csv">
+      <div class="csv__button">
+        <input
+          type="file"
+          hidden
+          #csv
+          name="Upload CSV"
+          id="file-upload"
+          (change)="csvFile($event)"
+          accept=".csv"
+        />
+        <button mat-raised-button color="primary" (click)="openInput()">
+          Select File to Upload
+        </button>
+      </div>
+      <div class="csv__box" *ngIf="records.length > 0">
+        <mat-form-field>
+          <input matInput [(ngModel)]="field" placeholder="{{ filterText }}" maxlength="5">
+        </mat-form-field>
+        <table class="csv__table">
+          <thead>
+          <tr>
+            <th>Firstname</th>
+            <th>Surname </th>
+            <th>Issues</th>
+            <th>Date of Birth</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let record of records | filter: field;">
+            <td>{{ record.firstName }}</td>
+            <td>{{ record.surName }}</td>
+            <td>{{ record.issues }}</td>
+            <td>{{ record.date }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
