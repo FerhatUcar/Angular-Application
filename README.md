@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
 
-This application has components such as CSV reader, a webshop where you can filter your products and add them to your shopping cart and you can add records by data
+This application has components such as CSV reader, a webshop where you can filter your products and add them to your shopping cart and you can add records by filling out with data
 
 ## Run application
 
