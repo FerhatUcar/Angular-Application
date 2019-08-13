@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import { routerTransition } from './components/router.animations';
+import { routerTransition } from './routing/router.animations';
 import * as $ from 'jquery';
 
 
 @Component({
-  selector: 'my-app',
+  selector: "my-app",
   animations: [ routerTransition ],
   template: `
     <navigation></navigation>

@@ -3,7 +3,7 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { routing } from './app.routing';
+import { routing } from './routing/app.routing';
 
 // components
 import { AppComponent }  from './app.component';
@@ -20,12 +20,12 @@ import { ProductCard } from './components/webshop/product-card/product-card';
 import { CheckoutComponent } from './components/webshop/checkout/checkout';
 import {CsvComponent} from './components/csv/csv';
 import {CsvService} from './components/csv/csv.service';
-import {FilterPipe} from './components/csv/filters/filter'
+import {FilterPipe} from './components/csv/filters/filter';
 
 // materials
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MaterialModule } from './material.module';
+import { MaterialModule } from './modules/material.module';
 import { MatTableModule } from "@angular/material";
 
 // services

@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var router_1 = require("@angular/router");
-var home_1 = require("./components/home");
-var about_component_1 = require("./components/about/about.component");
-var records_1 = require("./components/records/records");
-var webshop_1 = require("./components/webshop/webshop");
+var home_1 = require("../components/home");
+var about_component_1 = require("../components/about/about.component");
+var records_1 = require("../components/records/records");
+var webshop_1 = require("../components/webshop/webshop");
 var appRoutes = [
     {
         path: '',

@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material';
 
-@NgModule({
-  // exports: [MyErrorStateModule]
-})
+@NgModule()
 export class MyErrorStateModule implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const isSubmitted = form && form.submitted;

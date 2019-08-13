@@ -1,17 +1,17 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 
 @Component({
   moduleId: module.id,
-  selector: 'about',
-  templateUrl: 'about.html',
+  selector: "about",
+  templateUrl: "about.html",
 })
 export class AboutComponent  {
-    firstname: string;
-    lastname: string;
+    firstName: string;
+    surName: string;
 
     constructor(){
-      this.firstname = 'Ferhat';
-      this.lastname =  'Ucar';
+      this.firstName = "Ferhat";
+      this.surName =  "Ucar";
     }
 }

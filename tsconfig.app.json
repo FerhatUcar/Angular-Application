@@ -5,7 +5,9 @@
     "types": ["node"]
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "./main.ts",
+    "./polyfills.ts"
   ],
   "exclude": [
     "src/test.ts",

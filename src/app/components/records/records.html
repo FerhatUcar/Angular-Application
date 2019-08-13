@@ -10,9 +10,9 @@
           <mat-form-field class="example-full-width">
             <input matInput
                    name="name"
+                   id="name"
                    placeholder="Name"
-                   formControlName="name"
-                   required>
+                   formControlName="name">
             <mat-error *ngIf="controls.name.errors && controls.name.errors.required">
               Name is <strong>required</strong>
             </mat-error>
@@ -22,8 +22,7 @@
             <input matInput
                    name="street"
                    placeholder="Street"
-                   formControlName="street"
-                   required>
+                   formControlName="street">
             <mat-error *ngIf="controls.street.errors && controls.street.errors.required">
               Street is <strong>required</strong>
             </mat-error>
@@ -33,8 +32,7 @@
             <input matInput
                    name="number"
                    placeholder="Number"
-                   formControlName="number"
-                   required>
+                   formControlName="number">
             <mat-error *ngIf="controls.number.errors && controls.number.errors.required">
               Number is <strong>required</strong>
             </mat-error>
@@ -44,8 +42,7 @@
             <input matInput
                    name="code"
                    placeholder="Zipcode"
-                   formControlName="code"
-                   required>
+                   formControlName="code">
             <mat-error *ngIf="controls.code.errors && controls.code.errors.required">
               Street is <strong>required</strong>
             </mat-error>
@@ -55,8 +52,7 @@
             <input matInput
                    name="city"
                    placeholder="City"
-                   formControlName="city"
-                   required>
+                   formControlName="city">
             <mat-error *ngIf="controls.city.errors && controls.city.errors.required">
               City is <strong>required</strong>
             </mat-error>

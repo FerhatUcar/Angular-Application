@@ -3,4 +3,5 @@ import 'hammerjs';
 
 import { AppModule } from './app.module';
 
-platformBrowserDynamic().bootstrapModule(AppModule);
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));

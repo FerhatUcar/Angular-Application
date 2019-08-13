@@ -10,7 +10,7 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/common/http");
-var app_routing_1 = require("./app.routing");
+var app_routing_1 = require("./routing/app.routing");
 // components
 var app_component_1 = require("./app.component");
 var records_1 = require("./components/records/records");
@@ -20,7 +20,7 @@ var home_1 = require("./components/home");
 var navigation_1 = require("./components/navigation/navigation");
 // materials
 var animations_1 = require("@angular/platform-browser/animations");
-var material_module_1 = require("./material.module");
+var material_module_1 = require("./modules/material.module");
 var AppModule = (function () {
     function AppModule() {
     }

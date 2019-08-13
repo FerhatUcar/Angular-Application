@@ -1,6 +1,6 @@
-import { FormControl, Validators } from "@angular/forms";
-import { MyErrorStateModule } from "../../validator.module";
-import { Component } from "@angular/core";
+import {FormControl, Validators} from "@angular/forms";
+import { MyErrorStateModule } from "../../modules/validator.module";
+import {Component, Injectable} from "@angular/core";
 
 
 @Component({
@@ -9,7 +9,7 @@ import { Component } from "@angular/core";
   templateUrl: 'records.html'
 })
 
-
+@Injectable()
 export class InputErrorComponent {
   controls = {
     name: new FormControl('',[Validators.required]),
@@ -18,6 +18,10 @@ export class InputErrorComponent {
     code: new FormControl('',[Validators.required]),
     city: new FormControl('',[Validators.required]),
   };
+
+  // get name(): void {
+  //   return this.controls.get('name');
+  // }
 
   matcher = new MyErrorStateModule();
 }

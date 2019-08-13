@@ -1,12 +1,12 @@
 import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
-import { HomeComponent } from './components/home';
-import { AboutComponent } from './components/about/about.component';
-import { RecordsComponent } from './components/records/records';
-import { WebshopComponent } from './components/webshop/webshop';
-import { CheckoutComponent } from "./components/webshop/checkout/checkout";
-import { CsvComponent } from "./components/csv/csv";
+import { HomeComponent } from '../components/home';
+import { AboutComponent } from '../components/about/about.component';
+import { RecordsComponent } from '../components/records/records';
+import { WebshopComponent } from '../components/webshop/webshop';
+import { CheckoutComponent } from "../components/webshop/checkout/checkout";
+import { CsvComponent } from "../components/csv/csv";
 
 const appRoutes: Routes = [
   {
