@@ -4,6 +4,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 This application has components such as CSV reader, a webshop where you can filter your products and add them to your shopping cart and you can add records by filling out with data
 
+## Dependencies
+
+To get your app running, make sure you have all your dependencies installed with `npm install`
+
 ## Run application
 
 Run `ng serve` or `npm run start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
