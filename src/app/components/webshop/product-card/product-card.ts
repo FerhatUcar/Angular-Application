@@ -1,14 +1,14 @@
 import {Component, Inject, Input} from '@angular/core';
-import { DOCUMENT } from "@angular/common";
+import { DOCUMENT } from '@angular/common';
 
 // components
-import { ProductComponent } from "../products/products";
+import { ProductComponent } from '../products/products';
 
 // services
-import { ShoppingCartService } from "../shopping-cart/shopping-cart.service";
+import { ShoppingCartService } from '../shopping-cart/shopping-cart.service';
 
 // entities
-import { Product } from "../entities/product.entity";
+import { Product } from '../entities/product.entity';
 
 // animations
 import {

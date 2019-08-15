@@ -5,12 +5,12 @@ import {
   ChangeDetectorRef
 } from '@angular/core';
 
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute } from '@angular/router';
 
 
 // rxjs
-import { Subscription} from "rxjs/index";
-import { reduce, switchMap } from "rxjs/internal/operators";
+import { Subscription} from 'rxjs/index';
+import { reduce, switchMap } from 'rxjs/internal/operators';
 
 
 // animations
@@ -28,13 +28,13 @@ import {
 
 
 // services
-import { ShoppingCartService } from "./shopping-cart.service";
+import { ShoppingCartService } from './shopping-cart.service';
 
 
 // entities
-import { ProductInCart } from "../entities/productincart.entity";
-import { Product } from "../entities/product.entity";
-import { CartState } from "../entities/cartstate.entity";
+import { ProductInCart } from '../entities/productincart.entity';
+import { Product } from '../entities/product.entity';
+import { CartState } from '../entities/cartstate.entity';
 
 
 @Component({

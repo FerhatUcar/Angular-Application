@@ -1,4 +1,4 @@
-export interface DataModel {
+export interface UserInformation {
   firstName: string;
   surName: string;
   issues: string;

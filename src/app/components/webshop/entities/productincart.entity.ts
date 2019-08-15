@@ -1,5 +1,5 @@
 export interface ProductInCart {
-  name: string,
-  price: number,
-  quantity: number
+  name: string;
+  price: number;
+  quantity: number;
 }

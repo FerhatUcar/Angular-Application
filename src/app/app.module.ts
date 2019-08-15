@@ -1,18 +1,18 @@
 // main imports
-import { NgModule }      from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { routing } from './routing/app.routing';
 
 // components
-import { AppComponent }  from './app.component';
-import { RecordsComponent }  from './components/records/records';
-import { InputErrorComponent }  from './components/records/inputvalidate';
-import { AboutComponent }  from './components/about/about.component';
-import { WebshopComponent }  from './components/webshop/webshop';
-import { HomeComponent }  from './components/home';
-import { ProductComponent } from "./components/webshop/products/products";
+import { AppComponent } from './app.component';
+import { RecordsComponent } from './components/records/records';
+import { InputErrorComponent } from './components/records/inputvalidate';
+import { AboutComponent } from './components/about/about.component';
+import { WebshopComponent } from './components/webshop/webshop';
+import { HomeComponent } from './components/home';
+import { ProductComponent } from './components/webshop/products/products';
 import { NavigationComponent } from './components/navigation/navigation';
 import { ProductFilter } from './components/webshop/product-filter/product-filter';
 import { ShoppingCart } from './components/webshop/shopping-cart/shopping-cart';
@@ -26,11 +26,10 @@ import {FilterPipe} from './components/csv/filters/filter';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MaterialModule } from './modules/material.module';
-import { MatTableModule } from "@angular/material";
 
 // services
-import { ProductsService } from "./components/webshop/products/products.service";
-import { ShoppingCartService } from "./components/webshop/shopping-cart/shopping-cart.service";
+import { ProductsService } from './components/webshop/products/products.service';
+import { ShoppingCartService } from './components/webshop/shopping-cart/shopping-cart.service';
 
 
 

@@ -11,17 +11,17 @@ import { DOCUMENT } from '@angular/common';
 
 
 // rxjs
-import { Subscription } from "rxjs/index";
+import { Subscription } from 'rxjs/index';
 
 
 // entities
-import { Product } from "../entities/product.entity";
-import { ProductInCart } from "../entities/productincart.entity";
-import { CartState } from "../entities/cartstate.entity";
+import { Product } from '../entities/product.entity';
+import { ProductInCart } from '../entities/productincart.entity';
+import { CartState } from '../entities/cartstate.entity';
 
 
 // services
-import { ShoppingCartService } from "../shopping-cart/shopping-cart.service";
+import { ShoppingCartService } from '../shopping-cart/shopping-cart.service';
 
 
 

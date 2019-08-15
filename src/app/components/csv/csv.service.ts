@@ -1,27 +1,28 @@
-import {DataModel} from "./entities/DataModel.entity";
-import {Injectable} from "@angular/core";
+import { UserInformation } from './entities/UserInformation.entity';
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CsvService {
-  public getRows(csvRow: any, headerLength: any): string[] {
-    const records = <any>[];
+  public getRows(csvRow: any, headerLength: any): UserInformation[] {
+    const records = [];
 
     for (let i = 1; i < csvRow.length; i++) {
       const current: any = csvRow[i].split(',');
 
       // check if equal to the length of header
-      if (current.length == headerLength) {
-        const model = new class implements DataModel {
+      if (current.length === headerLength) {
+        // tslint:disable-next-line:new-parens
+        const model = new class implements UserInformation {
           firstName: string = current[0];
           surName: string = current[1];
           issues: string = current[2];
-          date: Date = current[3].split("T")[0];
+          date: Date = current[3].split('T')[0];
         };
 
         // remove white space and quotes
-        Object.keys(model).map(i => model[i] = model[i]
+        Object.keys(model).map((index) => model[index]
           .trim()
-          .replace(/"/g,""));
+          .replace(/"/g, ''));
 
         // push new model to records
         records.push(model);

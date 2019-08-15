@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject, BehaviorSubject } from "rxjs/index";
+import { Observable, Subject, BehaviorSubject } from 'rxjs/index';
 
 // entities
-import { Product } from "../entities/product.entity";
-import { CartState } from "../entities/cartstate.entity";
+import { Product } from '../entities/product.entity';
+import { CartState } from '../entities/cartstate.entity';
 
 // components
-import { ProductComponent } from "../products/products";
+import { ProductComponent } from '../products/products';
 
 
 @Injectable()

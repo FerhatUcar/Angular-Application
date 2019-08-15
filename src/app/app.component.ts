@@ -4,7 +4,8 @@ import * as $ from 'jquery';
 
 
 @Component({
-  selector: "my-app",
+  // tslint:disable-next-line:component-selector
+  selector: 'my-app',
   animations: [ routerTransition ],
   template: `
     <navigation></navigation>
