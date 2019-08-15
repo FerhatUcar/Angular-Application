@@ -167,7 +167,8 @@
   }
 
   &__sticky {
-    @include position(fixed, 15px null null $gutter);
+    @include position(fixed, 15px null null null);
+    width: 75px;
   }
 
   &__categories {

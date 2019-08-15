@@ -43,8 +43,7 @@ import { ShoppingCartService } from "./components/webshop/shopping-cart/shopping
     BrowserAnimationsModule,
     MaterialModule,
     MatSidenavModule,
-    ReactiveFormsModule,
-    MatTableModule
+    ReactiveFormsModule
   ],
   declarations: [
     AppComponent,
@@ -61,7 +60,6 @@ import { ShoppingCartService } from "./components/webshop/shopping-cart/shopping
     ShoppingCart,
     CheckoutComponent,
     FilterPipe
-
   ],
   bootstrap: [AppComponent],
   providers: [

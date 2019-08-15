@@ -198,7 +198,7 @@
   .webshop__sticky {
     position: fixed;
     top: 15px;
-    left: 20px; }
+    width: 75px; }
   .webshop__categories {
     height: 100%;
     width: 75px;
