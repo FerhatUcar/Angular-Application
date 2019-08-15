@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductFilter } from './product-filter';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '../../../modules/material.module';
+import { RouterModule } from '@angular/router';
 
 describe('ProductFilterComponent', () => {
   let component: ProductFilter;
@@ -8,6 +11,12 @@ describe('ProductFilterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        FormsModule,
+        MaterialModule,
+        ReactiveFormsModule,
+        RouterModule.forRoot([]),
+      ],
       declarations: [ ProductFilter ]
     })
     .compileComponents();

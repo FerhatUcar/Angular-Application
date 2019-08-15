@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
     $('button.hamburger').on('click', (e) => {
       $(e.currentTarget).toggleClass('active');
       $('.container, .navbar').toggleClass('push__right');
-      $(".navbar__side").toggleClass('navbar__side--active');
+      $('.navbar__side').toggleClass('navbar__side--active');
     });
 
     $('.navbar__link').on('click', () => {
