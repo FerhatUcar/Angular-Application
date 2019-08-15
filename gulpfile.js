@@ -1,11 +1,12 @@
 /*jshint esversion: 6 */
+// Gulpfile compiles scss because scss is in a different root
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
 
 
 // compile sass
-gulp.task('sass', function() {
+gulp.task('sass', () => {
   'use strict';
   return gulp.src('./src/assets/scss/**/*.scss')
     .pipe(sass().on('error', sass.logError))
@@ -14,7 +15,7 @@ gulp.task('sass', function() {
 
 
 // watch sass
-gulp.task('watch', function() {
+gulp.task('watch', () => {
   'use strict';
   gulp.watch('./src/assets/scss/**/*.scss', gulp.series('sass'));
 });
