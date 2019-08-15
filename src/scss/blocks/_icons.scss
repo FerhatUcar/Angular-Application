@@ -1,0 +1,22 @@
+@import "../../../node_modules/bourbon/core/bourbon";
+
+.product {
+  @include size(1.5rem);
+  margin: 10px auto;
+  background-size: contain;
+  display: block;
+  cursor: pointer;
+  border: 0;
+
+  &__fruit {
+    background: url("../assets/img/webshop/fruit/fruit.svg") no-repeat;
+  }
+
+  &__fish {
+    background: url("../assets/img/webshop/vis/fish.svg") no-repeat;
+  }
+
+  &__meat {
+    background: url("../assets/img/webshop/vlees/meat.svg") no-repeat;
+  }
+}

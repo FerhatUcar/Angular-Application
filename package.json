@@ -7,8 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "gulp": "gulp"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -45,8 +44,6 @@
     "babelify": "^10.0.0",
     "browserify": "^16.3.0",
     "codelyzer": "^5.0.0",
-    "gulp": "^4.0.2",
-    "gulp-sass": "^4.0.2",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",

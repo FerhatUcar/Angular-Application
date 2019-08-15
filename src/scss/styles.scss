@@ -1,0 +1,110 @@
+@import "../../../node_modules/bourbon/core/bourbon";
+@import "../../../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
+
+@import "blocks/nav";
+@import "blocks/records";
+@import "blocks/webshop";
+@import "blocks/icons";
+@import "blocks/csv";
+@import "blocks/hamburger";
+
+@import url(https://fonts.googleapis.com/css?family=Squada+One);
+
+
+
+html, body {
+  overflow-x: hidden;
+}
+
+
+body {
+  font-family: 'Squada One', cursive;
+  background-size: cover;
+  background: url("../assets/img/android.jpg") no-repeat center center fixed;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  transition: all 0.2s linear;
+  max-width: 940px;
+  overflow: hidden;
+  min-height: 100%;
+  margin: 0 $gutter;
+
+  @include screen-min-container {
+    margin: 0 auto;
+    padding: 0 $gutter;
+    max-width: 1500px;
+  }
+
+  &__box {
+    background: $black-color-opacity-075;
+    display: inline-block;
+    width: 100%;
+    margin-top: $gutter;
+
+    p {
+      margin-left: $gutter;
+    }
+  }
+
+  &__balls {
+    margin: $gutter;
+  }
+}
+
+p {
+  color: white;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+a {
+  line-height: 1.7;
+}
+
+h1 {
+  margin: 1rem;
+  font-size: $header-title;
+  color: white;
+
+  span {
+    color: $color-pink;
+    text-decoration: underline;
+    text-decoration-color: white;
+  }
+}
+
+h2 {
+  margin-top: 30px;
+  color: white;
+  font-size: 1.7em;
+  line-height: 1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+.block {
+  background: white;
+  display: inline-block;
+  width: $gutter;
+  height: $gutter;
+  border-radius: 50%;
+  margin: 0 5px 0 0;
+}
+
+a {
+  color: $color-pink;
+
+  &:hover {
+    color: darken($color-pink, 10%);
+  }
+}

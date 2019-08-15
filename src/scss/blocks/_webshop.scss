@@ -1,0 +1,253 @@
+@import "../../../node_modules/bourbon/core/bourbon";
+@import "../mixins/mixins";
+@import "../partials/vars";
+@import "../partials/breakpoints";
+
+
+.webshop {
+  background: $black-color-opacity-075;
+  position: relative;
+  margin: 1rem 0 2rem 0;
+  display: inline-flex;
+  border-radius: 1rem;
+  width: 100%;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),
+              0 2px 2px 0 rgba(0,0,0,.14),
+              0 1px 5px 0 rgba(0,0,0,.12);
+
+  h3 {
+    padding: 0.5rem;
+    border-bottom: solid 1px;
+    margin-bottom: 0;
+  }
+
+  products {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 1rem;
+    max-width: $products-max-width;
+    background:
+      linear-gradient(
+          to bottom,
+          $black-color-opacity-000 40px,
+          $color-grey-2 45px
+    );
+
+    @include screen-hide-shopping-cart {
+      @include border-right-radius(1rem);
+    }
+
+    h3 {
+      flex: 0 0 100%;
+      height: 26px;
+    }
+  }
+
+  &__close {
+    @include size(1.25rem);
+    background: url("../assets/img/webshop/close.svg") no-repeat;
+    background-size: contain;
+    display: block;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    border: 0;
+  }
+
+  &__cartIcon {
+    display: none !important;
+
+    @include screen-hide-shopping-cart {
+      display: block !important;
+      margin: 0 auto !important;
+    }
+  }
+
+  &__cart {
+    border-top-right-radius: 1rem;
+    min-height: 300px;
+    min-width: 275px;
+    flex: 30%;
+    transition: visibility 0s, opacity .3s linear;
+
+    @include screen-hide-shopping-cart {
+      visibility: hidden;
+      display: none;
+      opacity: 0;
+    }
+  }
+
+  &__total {
+    color: white;
+    border-top: solid 1px white;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    transition: all .1s ease-in-out;
+
+    &--shipment {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    &--price {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &:hover {
+      background-color: rgba(255,255,255,0.3);
+    }
+  }
+
+  &__clear {
+    border-top: solid 1px white;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      width: 100%;
+
+      &:first-child {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  &__checkout {
+    border-top: solid 1px white;
+    padding: 0.5rem;
+
+    button {
+      width: 100%;
+    }
+  }
+
+  &__items {
+    @include flex(flex, center, center);
+    transition: all .1s ease-in-out;
+    color: white;
+    justify-content: space-between;
+    padding: 0.5rem;
+
+    &:hover {
+      background-color: rgba(255,255,255,0.3);
+    }
+
+    &--name {
+      @include truncate(nowrap, hidden, ellipsis);
+      flex-grow: 1;
+      width: 90px;
+      max-width: 90px;
+      margin-right: 0.5rem;
+    }
+
+    &--quantity {
+      @include flex(flex, center, center);
+      flex-grow: 1;
+
+      span {
+        padding: 0 5px;
+      }
+
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        &:disabled {
+          .mat-icon.mat-warn {
+            color: $color-grey-2;
+          }
+        }
+      }
+    }
+  }
+
+  &__empty {
+    color: white;
+    margin: 1rem 0.5rem;
+  }
+
+  &__sticky {
+    @include position(fixed, 15px null null null);
+    width: 75px;
+  }
+
+  &__categories {
+    @include size(75px, 100%);
+    color: white;
+    flex-flow: column;
+    display: flex;
+  }
+
+  &__back {
+    width: 100%;
+    display: block;
+    margin: 1rem;
+  }
+
+  &__button {
+    margin: 3px auto !important;
+    display: block !important;
+  }
+
+  &__menu {
+    width: 300px;
+    background: #00b8d4;
+  }
+
+  &__checkout {
+    mat-icon {
+      @include position(relative, null null 1px null);
+    }
+  }
+
+  &__card {
+    margin: $card-spacing;
+    flex-basis: auto;
+    flex-grow: 1;
+
+    &:hover {
+      img {
+        transition: all 300ms;
+        transform: translateY(-$gutter-sm);
+      }
+    }
+
+    &:last-of-type {
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: black;
+    }
+
+    img {
+      margin: 0 auto;
+      display: block;
+    }
+
+    mat-card-actions {
+      button {
+        width: 100%;
+      }
+    }
+  }
+
+  .mat-divider {
+    border-color: white;
+  }
+}
+
+.is-visible {
+  @include position(absolute, null null null 76px);
+  visibility: visible;
+  display: block;
+  opacity: 1;
+  width: calc(100% - 77px);
+  background: $black-color-opacity-095;
+}
+
+.is-warn {
+  background: $color-warn;
+}

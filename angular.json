@@ -7,7 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "styleext": "scss"
         }
       },
       "root": "",
@@ -27,9 +27,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/css/main.css",
-              "src/assets/css/hamburger.css",
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+              "src/scss/styles.scss"
             ],
             "scripts": []
           },
@@ -89,9 +87,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/css/main.css",
-              "src/assets/css/hamburger.css",
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+              "src/scssscss/styles.scss"
             ],
             "scripts": []
           }
@@ -122,6 +118,12 @@
           }
         }
       }
-    }},
-  "defaultProject": "app"
+    }
+  },
+  "defaultProject": "app",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
