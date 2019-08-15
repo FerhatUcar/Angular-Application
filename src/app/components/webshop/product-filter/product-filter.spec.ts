@@ -4,6 +4,9 @@ import { ProductFilter } from './product-filter';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../../../modules/material.module';
 import { RouterModule } from '@angular/router';
+import {ProductsService} from '../products/products.service';
+import {ShoppingCartService} from '../shopping-cart/shopping-cart.service';
+import {CsvService} from '../../csv/csv.service';
 
 describe('ProductFilterComponent', () => {
   let component: ProductFilter;
@@ -17,7 +20,11 @@ describe('ProductFilterComponent', () => {
         ReactiveFormsModule,
         RouterModule.forRoot([]),
       ],
-      declarations: [ ProductFilter ]
+      declarations: [ ProductFilter ],
+      providers: [
+        ProductsService,
+        ShoppingCartService
+      ],
     })
     .compileComponents();
   }));
@@ -28,7 +35,10 @@ describe('ProductFilterComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create component', () => {
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(component).toBeTruthy();
+    });
   });
 });

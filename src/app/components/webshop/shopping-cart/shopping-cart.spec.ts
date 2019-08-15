@@ -4,6 +4,9 @@ import { ShoppingCart } from './shopping-cart';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../../../modules/material.module';
 import { RouterModule } from '@angular/router';
+import {ProductsService} from '../products/products.service';
+import {ShoppingCartService} from './shopping-cart.service';
+import {CsvService} from '../../csv/csv.service';
 
 describe('ShoppingCartComponent', () => {
   let component: ShoppingCart;
@@ -17,7 +20,11 @@ describe('ShoppingCartComponent', () => {
         ReactiveFormsModule,
         RouterModule.forRoot([]),
       ],
-      declarations: [ ShoppingCart ]
+      declarations: [ ShoppingCart ],
+      providers: [
+        ProductsService,
+        ShoppingCartService
+      ],
     })
     .compileComponents();
   }));
@@ -28,7 +35,10 @@ describe('ShoppingCartComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create component', () => {
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(component).toBeTruthy();
+    });
   });
 });

@@ -4,6 +4,12 @@ import { ProductComponent } from './products';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MaterialModule} from '../../../modules/material.module';
 import {RouterModule} from '@angular/router';
+import {ProductsService} from './products.service';
+import {ShoppingCartService} from '../shopping-cart/shopping-cart.service';
+import {CsvService} from '../../csv/csv.service';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {HttpClient, HttpHandler} from '@angular/common/http';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('ProductComponent', () => {
   let component: ProductComponent;
@@ -15,9 +21,15 @@ describe('ProductComponent', () => {
         FormsModule,
         MaterialModule,
         ReactiveFormsModule,
+        HttpClientTestingModule,
         RouterModule.forRoot([]),
       ],
-      declarations: [ ProductComponent ]
+      declarations: [ ProductComponent ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      providers: [
+        ProductsService,
+        ShoppingCartService
+      ],
     })
     .compileComponents();
   }));
@@ -28,7 +40,10 @@ describe('ProductComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create component', () => {
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(component).toBeTruthy();
+    });
   });
 });

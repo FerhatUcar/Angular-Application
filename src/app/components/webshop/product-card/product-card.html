@@ -1,4 +1,4 @@
-<mat-card id="{{ product.category }}">
+<mat-card *ngIf="product" id="{{ product.category }}">
   <mat-card-header>
     <mat-card-title>{{ product.name }}</mat-card-title>
     <mat-card-subtitle>{{ product.price | currency:'EUR':code }}</mat-card-subtitle>

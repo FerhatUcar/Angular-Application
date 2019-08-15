@@ -1,23 +1,28 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductCard } from './product-card';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../../../modules/material.module';
 import { RouterModule } from '@angular/router';
+import { ShoppingCartService } from '../shopping-cart/shopping-cart.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-describe('ShoppingCartComponent', () => {
+describe('ProductCardComponent', () => {
   let component: ProductCard;
   let fixture: ComponentFixture<ProductCard>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        FormsModule,
         MaterialModule,
         ReactiveFormsModule,
+        HttpClientTestingModule,
         RouterModule.forRoot([]),
       ],
-      declarations: [ ProductCard ]
+      declarations: [ ProductCard ],
+      providers: [
+        ShoppingCartService
+      ],
     })
     .compileComponents();
   }));
@@ -28,7 +33,10 @@ describe('ShoppingCartComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create component', () => {
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(component).toBeTruthy();
+    });
   });
 });
