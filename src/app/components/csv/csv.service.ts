@@ -13,9 +13,9 @@ export class CsvService {
       if (current.length === headerLength) {
         // tslint:disable-next-line:new-parens
         const model = new class implements UserInformation {
-          firstName: string = current[0];
-          surName: string = current[1];
-          issues: string = current[2];
+          firstName = current[0];
+          surName = current[1];
+          issues = current[2];
           date: Date = current[3].split('T')[0];
         };
 
