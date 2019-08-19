@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CsvService {
-  public getRows(csvRow: any, headerLength: any): UserInformation[] {
-    const records = [];
+  public getRows(csvRow: any, headerLength: any) {
+    const records: UserInformation[] = [];
 
     for (let i = 1; i < csvRow.length; i++) {
       const current: any = csvRow[i].split(',');
