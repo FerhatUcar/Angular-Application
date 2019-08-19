@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CsvService {
-  public getRows(csvRow: any, headerLength: any) {
+  public getRows(csvRow: any, headerLength: number) {
     const records: UserInformation[] = [];
 
     for (let i = 1; i < csvRow.length; i++) {
