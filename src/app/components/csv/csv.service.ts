@@ -20,7 +20,7 @@ export class CsvService {
         };
 
         // remove white space and quotes
-        Object.keys(model).map((index) => model[index]
+        Object.keys(model).map((index) => model[index] = model[index]
           .trim()
           .replace(/"/g, ''));
 
