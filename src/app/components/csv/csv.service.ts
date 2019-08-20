@@ -18,9 +18,8 @@ export class CsvService {
           issues = current[2];
           date: Date = current[3].split('T')[0];
         };
-
         // remove white space and quotes
-        Object.keys(model).map((index) => model[index] = model[index]
+        Object.keys(model).forEach((index) => model[index] = model[index]
           .trim()
           .replace(/"/g, ''));
 
