@@ -6,55 +6,85 @@
   <div class="container__box">
     <div class="records">
       <div class="records__input">
-        <form [formGroup]="newContactForm" class="records__form" (ngSubmit)="pushRecord()">
+        <form [formGroup]="contactForm" class="records__form" (ngSubmit)="pushRecord()">
           <mat-form-field class="example-full-width">
-            <input matInput
-                   name="name"
-                   id="name"
-                   placeholder="Name"
-                   formControlName="name">
-            <mat-error *ngIf="controls.name.errors && controls.name.errors.required">
-              Name is <strong>required</strong>
+            <input
+              matInput
+              name="name"
+              id="name"
+              placeholder="Name"
+              formControlName="name">
+            <mat-error *ngIf="contactName.touched && contactName.invalid || contactName.errors">
+              <div *ngIf="contactName.errors.required">
+                <span>Name is <strong>required</strong></span>
+              </div>
+              <div *ngIf="contactName.errors.minlength">
+                <span>Name should be minimum <strong>2</strong> characters</span>
+              </div>
             </mat-error>
           </mat-form-field>
           <br>
           <mat-form-field class="example-full-width">
-            <input matInput
-                   name="street"
-                   placeholder="Street"
-                   formControlName="street">
-            <mat-error *ngIf="controls.street.errors && controls.street.errors.required">
-              Street is <strong>required</strong>
+            <input
+              matInput
+              name="street"
+              placeholder="Street"
+              formControlName="street">
+            <mat-error *ngIf="contactStreet.touched && contactStreet.invalid || contactStreet.errors">
+              <div *ngIf="contactStreet.errors.required">
+                <span>Street is <strong>required</strong></span>
+              </div>
+              <div *ngIf="contactStreet.errors.minlength">
+                <span>Street should be minimum <strong>2</strong> characters</span>
+              </div>
             </mat-error>
           </mat-form-field>
           <br>
           <mat-form-field class="example-full-width">
-            <input matInput
-                   name="number"
-                   placeholder="Number"
-                   formControlName="number">
-            <mat-error *ngIf="controls.number.errors && controls.number.errors.required">
-              Number is <strong>required</strong>
+            <input
+              matInput
+              name="number"
+              placeholder="Number"
+              formControlName="number">
+            <mat-error *ngIf="contactNumber.touched && contactNumber.invalid || contactNumber.errors">
+              <div *ngIf="contactNumber.errors.required">
+                <span>Number is <strong>required</strong></span>
+              </div>
+              <div *ngIf="contactNumber.errors.minlength">
+                <span>Number should be minimum <strong>2</strong> characters</span>
+              </div>
             </mat-error>
           </mat-form-field>
           <br>
           <mat-form-field class="example-full-width">
-            <input matInput
-                   name="code"
-                   placeholder="Zipcode"
-                   formControlName="code">
-            <mat-error *ngIf="controls.code.errors && controls.code.errors.required">
-              Street is <strong>required</strong>
+            <input
+              matInput
+              name="code"
+              placeholder="Zipcode"
+              formControlName="code">
+            <mat-error *ngIf="contactCode.touched && contactCode.invalid || contactCode.errors">
+              <div *ngIf="contactCode.errors.required">
+                <span>Zipcode is <strong>required</strong></span>
+              </div>
+              <div *ngIf="contactCode.errors.minlength">
+                <span>Zipcode should be minimum <strong>2</strong> characters</span>
+              </div>
             </mat-error>
           </mat-form-field>
           <br>
           <mat-form-field class="example-full-width">
-            <input matInput
-                   name="city"
-                   placeholder="City"
-                   formControlName="city">
-            <mat-error *ngIf="controls.city.errors && controls.city.errors.required">
-              City is <strong>required</strong>
+            <input
+              matInput
+              name="city"
+              placeholder="City"
+              formControlName="city">
+            <mat-error *ngIf="contactCity.touched && contactCity.invalid || contactCity.errors">
+              <div *ngIf="contactCity.errors.required">
+                <span>City is <strong>required</strong></span>
+              </div>
+              <div *ngIf="contactCity.errors.minlength">
+                <span>City should be minimum <strong>2</strong> characters</span>
+              </div>
             </mat-error>
           </mat-form-field>
           <br><br>

@@ -8,7 +8,7 @@ import { routing } from './routing/app.routing';
 // components
 import { AppComponent } from './app.component';
 import { RecordsComponent } from './components/records/records';
-import { InputErrorComponent } from './components/records/inputvalidate';
+import { InputErrorComponent } from './components/records/common/inputvalidate';
 import { AboutComponent } from './components/about/about.component';
 import { WebshopComponent } from './components/webshop/webshop';
 import { HomeComponent } from './components/home';

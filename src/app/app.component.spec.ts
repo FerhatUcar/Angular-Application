@@ -16,7 +16,7 @@ import { MaterialModule } from './modules/material.module';
 import { RouterModule } from '@angular/router';
 import { CsvComponent } from './components/csv/csv';
 import { RecordsComponent } from './components/records/records';
-import { InputErrorComponent } from './components/records/inputvalidate';
+import { InputErrorComponent } from './components/records/common/inputvalidate';
 import { HomeComponent } from './components/home';
 import { AboutComponent } from './components/about/about.component';
 import { ProductComponent } from './components/webshop/products/products';

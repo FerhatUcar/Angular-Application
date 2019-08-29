@@ -3,7 +3,7 @@ import { FormGroup, FormGroupDirective } from '@angular/forms';
 
 
 // components
-import { InputErrorComponent } from './inputvalidate';
+import { InputErrorComponent } from './common/inputvalidate';
 
 
 // entities
@@ -19,7 +19,7 @@ import { contactTypes } from './entities/contacttypes.entity';
 
 export class RecordsComponent extends InputErrorComponent implements contactTypes {
   @ViewChild(FormGroupDirective, null) form: any;
-  private newContactForm: FormGroup;
+  private contactForm: FormGroup;
   private records: contactTypes[];
 
   public name: string;
@@ -44,15 +44,41 @@ export class RecordsComponent extends InputErrorComponent implements contactType
     ];
 
     // bind controls to variable
-    this.newContactForm = new FormGroup(this.controls);
-}
+    this.contactForm = this.controls;
+  }
+
+
+  get contactName() {
+    return this.contactForm.get('name');
+  }
+
+  get contactStreet() {
+    return this.contactForm.get('street');
+  }
+
+  get contactNumber() {
+    return this.contactForm.get('number');
+  }
+
+  get contactCode() {
+    return this.contactForm.get('code');
+  }
+
+  get contactCity() {
+    return this.contactForm.get('city');
+  }
+
 
   // push record to the output field when valid is true
-  public pushRecord = () => {
+  public pushRecord = (): void => {
     if (this.form.valid) {
       this.records.push(this.form.value);
       this.form.resetForm();
     }
+
+    this.contactForm.setErrors({
+      invalidForm: true
+    });
   }
 
   // remove the current record from the output field
