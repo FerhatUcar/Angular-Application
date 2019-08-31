@@ -32,7 +32,6 @@
     }
   }
 
-
   &__delete {
     right: -35px;
     top: -35px;
@@ -50,11 +49,16 @@
   }
 
   &__output {
-    width: 45%;
+    width: 53%;
 
     @include screen-phone {
       width: 100%;
+      margin-top: 1rem;
     }
   }
+}
+
+mat-form-field {
+  margin-bottom: 1rem;
 }
 

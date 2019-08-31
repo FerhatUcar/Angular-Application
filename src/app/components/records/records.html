@@ -7,7 +7,7 @@
     <div class="records">
       <div class="records__input">
         <form [formGroup]="contactForm" class="records__form" (ngSubmit)="pushRecord()">
-          <mat-form-field class="example-full-width">
+          <mat-form-field>
             <input
               matInput
               name="name"
@@ -23,8 +23,7 @@
               </div>
             </mat-error>
           </mat-form-field>
-          <br>
-          <mat-form-field class="example-full-width">
+          <mat-form-field>
             <input
               matInput
               name="street"
@@ -39,8 +38,7 @@
               </div>
             </mat-error>
           </mat-form-field>
-          <br>
-          <mat-form-field class="example-full-width">
+          <mat-form-field>
             <input
               matInput
               name="number"
@@ -55,8 +53,7 @@
               </div>
             </mat-error>
           </mat-form-field>
-          <br>
-          <mat-form-field class="example-full-width">
+          <mat-form-field>
             <input
               matInput
               name="code"
@@ -71,8 +68,7 @@
               </div>
             </mat-error>
           </mat-form-field>
-          <br>
-          <mat-form-field class="example-full-width">
+          <mat-form-field>
             <input
               matInput
               name="city"
@@ -87,7 +83,6 @@
               </div>
             </mat-error>
           </mat-form-field>
-          <br><br>
           <button mat-raised-button color="primary" type="submit">Add record</button>
         </form>
       </div>
